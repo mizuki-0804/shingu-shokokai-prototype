@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>会員企業一覧 | 新宮町商工会 地域ポータル</title>
+    <meta name="description" content="新宮町商工会の会員企業一覧。業種やキーワードで町内のお店・事業者を探せます。" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="./index.html" aria-label="トップへ">
+        <span class="brand-mark">新</span>
+        <span>
+          <strong>新宮町商工会</strong>
+          <small>会員企業一覧</small>
+        </span>
+      </a>
+      <nav class="site-nav" aria-label="主要ナビゲーション">
+        <a href="./index.html#features">特集</a>
+        <a href="./index.html#interviews">インタビュー</a>
+        <a href="./businesses.html">会員企業一覧</a>
+        <a href="./index.html#news">お知らせ</a>
+        <a class="nav-cta" href="./index.html#about">商工会とは</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="page-hero compact-page-hero">
+        <p class="eyebrow">Business Directory</p>
+        <h1>町内のお店・事業者を探す</h1>
+        <p>業種やキーワードで絞り込みながら、地域住民が必要な情報へすぐアクセスできる一覧です。</p>
+      </section>
+
+      <section class="section businesses-section" aria-labelledby="business-list-title">
+        <div class="section-heading split-heading">
+          <div>
+            <p class="eyebrow">Search</p>
+            <h2 id="business-list-title">会員企業一覧</h2>
+          </div>
+          <p>カードには企業名、業種、写真、紹介文、所在地、電話番号、HP、Googleマップ、SNSリンクを表示します。</p>
+        </div>
+
+        <div class="filters" aria-label="絞り込み条件">
+          <label>
+            業種
+            <select id="category-filter">
+              <option value="">すべて</option>
+            </select>
+          </label>
+          <label>
+            エリア
+            <select id="area-filter">
+              <option value="">すべて</option>
+            </select>
+          </label>
+          <label class="wide-filter">
+            キーワード
+            <input id="keyword-filter" type="search" placeholder="企業名、業種、所在地、電話番号で検索" />
+          </label>
+        </div>
+
+        <div id="directory-ad-slot" class="directory-ad-slot" aria-label="おすすめ掲載"></div>
+
+        <div class="list-status">
+          <span id="result-count">0件</span>
+          <button id="reset-filters" type="button">条件をクリア</button>
+        </div>
+        <div id="business-list" class="business-list directory-list"></div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>新宮町商工会 地域ポータルサイト 叩き台</p>
+      <p><a href="./index.html">トップへ戻る</a></p>
+    </footer>
+
+    <script src="./data.js"></script>
+    <script src="./app.js"></script>
+  </body>
+</html>
