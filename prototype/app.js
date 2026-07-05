@@ -80,7 +80,7 @@ function filteredBusinesses() {
 function businessCard(business, options = {}) {
   const detailLink = business.detailPage
     ? `<a class="card-detail-link" href="./business-detail.html?id=${business.id}">詳しく見る</a>`
-    : `<span class="card-note">基本情報を掲載中</span>`;
+    : `<span class="card-note">基本情報を見る</span>`;
 
   return `
     <article class="business-card ${business.detailPage ? "premium" : ""}">
@@ -395,7 +395,7 @@ function renderDetailPage() {
       <div class="section-heading">
         <p class="eyebrow">Photo Gallery</p>
         <h2>写真ギャラリー</h2>
-        <p>企業の雰囲気や商品が伝わる写真を掲載し、来訪前に魅力を確認できるようにします。</p>
+        <p>お店や会社の雰囲気、商品・サービスの様子を写真で確認できます。</p>
       </div>
       <div class="gallery-grid">
         ${business.gallery.map((image, index) => `<img src="${image}" alt="${business.name} 写真${index + 1}" loading="lazy">`).join("")}
