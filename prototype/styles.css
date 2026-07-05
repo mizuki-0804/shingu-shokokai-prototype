@@ -418,7 +418,7 @@ select {
   line-height: 1.14;
   letter-spacing: 0;
   text-align: left;
-  overflow-wrap: anywhere;
+  overflow-wrap: normal;
   text-wrap: balance;
   text-shadow: 0 3px 18px rgba(0, 0, 0, 0.38);
 }
@@ -430,7 +430,7 @@ select {
   font-size: clamp(15px, 1.7vw, 19px);
   font-weight: 800;
   line-height: 1.9;
-  overflow-wrap: anywhere;
+  overflow-wrap: normal;
   text-shadow: 0 2px 12px rgba(0, 0, 0, 0.34);
 }
 
@@ -657,8 +657,13 @@ select {
   font-size: clamp(28px, 4vw, 58px);
   font-weight: 900;
   line-height: 1.25;
+  text-wrap: balance;
   text-shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
   -webkit-text-stroke: 1px rgba(0, 0, 0, 0.45);
+}
+
+.pickup-photo p span {
+  display: block;
 }
 
 .pickup-copy {
@@ -677,7 +682,7 @@ select {
   line-height: 0.95;
   letter-spacing: 0;
   writing-mode: horizontal-tb;
-  overflow-wrap: anywhere;
+  overflow-wrap: normal;
 }
 
 .pickup-copy span {
@@ -2421,7 +2426,8 @@ select {
 .business-card h3 {
   margin: 0;
   min-width: 0;
-  overflow-wrap: anywhere;
+  overflow-wrap: normal;
+  text-wrap: balance;
   font-size: 20px;
 }
 
@@ -3200,7 +3206,7 @@ select {
     font-size: 12px;
     line-height: 1.35;
     text-align: center;
-    overflow-wrap: anywhere;
+    overflow-wrap: normal;
   }
 
   .visual-link-panels a:last-child {
