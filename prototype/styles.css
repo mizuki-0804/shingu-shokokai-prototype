@@ -3258,8 +3258,8 @@ select {
   }
 
   .visual-message h1 {
-    font-size: clamp(29px, 8.5vw, 36px);
-    line-height: 1.16;
+    font-size: clamp(28px, 7.7vw, 34px);
+    line-height: 1.18;
   }
 
   .visual-lead {
@@ -3353,6 +3353,11 @@ select {
     border-bottom: 1px solid var(--line);
   }
 
+  .tsukigi-newsline .simple-news-list a {
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
   .tsukigi-pickup {
     gap: 18px;
     padding: 18px 20px 42px;
@@ -3381,8 +3386,8 @@ select {
     top: auto;
     bottom: 18px;
     z-index: 2;
-    font-size: 22px;
-    line-height: 1.28;
+    font-size: 20px;
+    line-height: 1.32;
   }
 
   .pickup-photo p span {
@@ -3396,11 +3401,13 @@ select {
 
   .vertical-title {
     writing-mode: horizontal-tb;
-    font-size: 40px;
+    font-size: 34px;
+    line-height: 1.06;
   }
 
   .pickup-copy h2 {
-    font-size: 24px;
+    font-size: 22px;
+    line-height: 1.45;
   }
 
   .pickup-copy p:not(.vertical-title) {
@@ -3443,7 +3450,8 @@ select {
 
   .home-page .region-title h2 {
     writing-mode: horizontal-tb;
-    font-size: 40px;
+    font-size: 34px;
+    line-height: 1.08;
   }
 
   .feature-lead-story img {
@@ -3464,7 +3472,7 @@ select {
   }
 
   .function-heading h2 {
-    font-size: 34px;
+    font-size: 30px;
     white-space: normal;
   }
 
@@ -3479,7 +3487,26 @@ select {
   }
 
   .function-grid h3 {
-    font-size: 22px;
+    font-size: 20px;
+  }
+
+  .feature-card h3,
+  .article-card h3,
+  .interview-card h3 {
+    font-size: 18px;
+    line-height: 1.55;
+  }
+
+  .news-list h3 {
+    font-size: 16px;
+    line-height: 1.65;
+    overflow-wrap: anywhere;
+    word-break: normal;
+  }
+
+  .contact-section h2 {
+    font-size: 30px;
+    line-height: 1.22;
   }
 
   .contact-list div {
