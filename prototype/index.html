@@ -9,7 +9,7 @@
       content="新宮町のお店・会社・人を知り、経営相談や地域の情報にアクセスできる新宮町商工会の地域メディア"
     />
     <meta name="robots" content="noindex, nofollow, noarchive" />
-    <link rel="stylesheet" href="./styles.css?v=20260707-like1" />
+    <link rel="stylesheet" href="./styles.css?v=20260707-tabs1" />
   </head>
   <body class="home-page">
     <header class="site-header">
@@ -78,15 +78,17 @@
         <form class="tsukigi-search" action="./businesses.html" aria-label="地域情報検索">
           <label for="hero-query">検索</label>
           <input id="hero-query" name="q" type="search" placeholder="会員企業・お店・業種で探す" />
+          <input id="hero-category" name="category" type="hidden" value="" />
           <button id="hero-search-button" type="submit">検索</button>
         </form>
-        <div class="category-shortcuts" aria-label="業種から探す">
-          <span>業種から探す</span>
-          <a href="./businesses.html?category=飲食">飲食</a>
-          <a href="./businesses.html?category=建設">住まい・建設</a>
-          <a href="./businesses.html?category=美容">美容</a>
-          <a href="./businesses.html?category=健康">健康</a>
-          <a href="./businesses.html?category=サービス">サービス</a>
+        <div class="category-shortcuts" role="tablist" aria-label="業種から探す">
+          <span>業種から絞る</span>
+          <button type="button" class="is-active" data-hero-category="" role="tab" aria-selected="true">すべて</button>
+          <button type="button" data-hero-category="飲食" role="tab" aria-selected="false">飲食</button>
+          <button type="button" data-hero-category="建設" role="tab" aria-selected="false">住まい・建設</button>
+          <button type="button" data-hero-category="美容" role="tab" aria-selected="false">美容</button>
+          <button type="button" data-hero-category="健康" role="tab" aria-selected="false">健康</button>
+          <button type="button" data-hero-category="サービス" role="tab" aria-selected="false">サービス</button>
         </div>
       </section>
 
@@ -336,6 +338,6 @@
     </footer>
 
     <script src="./data.js?v=20260706-copy1"></script>
-    <script src="./app.js?v=20260707-like1"></script>
+    <script src="./app.js?v=20260707-tabs1"></script>
   </body>
 </html>

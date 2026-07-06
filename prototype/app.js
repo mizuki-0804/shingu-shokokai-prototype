@@ -34,6 +34,17 @@ function readLikes() {
   }
 }
 
+function likeRecord(likes, id, baseCount) {
+  const current = likes[id];
+  if (typeof current === "number") {
+    return { count: current, liked: current > baseCount };
+  }
+  return {
+    count: Number(current?.count ?? baseCount),
+    liked: Boolean(current?.liked)
+  };
+}
+
 function writeLikes(likes) {
   try {
     localStorage.setItem(likeStorageKey, JSON.stringify(likes));
@@ -44,11 +55,11 @@ function writeLikes(likes) {
 
 function likeButton(id, baseCount = 0) {
   const likes = readLikes();
-  const count = Number(likes[id] ?? baseCount);
+  const record = likeRecord(likes, id, baseCount);
   return `
-    <button class="like-button" type="button" data-like-id="${id}" data-like-base="${baseCount}" aria-label="この記事にいいねする">
-      <span aria-hidden="true">LIKE</span>
-      <strong>${count}</strong>
+    <button class="like-button ${record.liked ? "is-liked" : ""}" type="button" data-like-id="${id}" data-like-base="${baseCount}" aria-label="この記事にいいねする" aria-pressed="${record.liked ? "true" : "false"}" ${record.liked ? "disabled" : ""}>
+      <span aria-hidden="true">${record.liked ? "LIKED" : "LIKE"}</span>
+      <strong>${record.count}</strong>
     </button>
   `;
 }
@@ -331,6 +342,7 @@ function setupFilters() {
       const isActive = button.dataset.filterCategory === state.category;
       button.classList.toggle("is-active", isActive);
       button.setAttribute("aria-pressed", isActive ? "true" : "false");
+      button.setAttribute("aria-selected", isActive ? "true" : "false");
     });
   };
 
@@ -374,19 +386,46 @@ function setupFilters() {
 }
 
 function setupHeroSearch() {
+  const heroForm = qs(".tsukigi-search");
   const heroQuery = qs("#hero-query");
+  const heroCategory = qs("#hero-category");
   const heroButton = qs("#hero-search-button");
-  if (!heroQuery || !heroButton) return;
+  if (!heroQuery || !heroButton || !heroForm) return;
+
+  qsa("[data-hero-category]").forEach((button) => {
+    button.addEventListener("click", () => {
+      const value = button.dataset.heroCategory || "";
+      if (heroCategory) heroCategory.value = value;
+      qsa("[data-hero-category]").forEach((item) => {
+        const isActive = item === button;
+        item.classList.toggle("is-active", isActive);
+        item.setAttribute("aria-selected", isActive ? "true" : "false");
+      });
+    });
+  });
 
   const goToList = () => {
     const params = new URLSearchParams();
     if (heroQuery.value.trim()) params.set("q", heroQuery.value.trim());
+    if (heroCategory?.value) params.set("category", heroCategory.value);
     window.location.href = `./businesses.html${params.toString() ? `?${params}` : ""}`;
   };
 
-  heroButton.addEventListener("click", goToList);
+  heroForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+    goToList();
+  });
+
+  heroButton.addEventListener("click", (event) => {
+    event.preventDefault();
+    goToList();
+  });
+
   heroQuery.addEventListener("keydown", (event) => {
-    if (event.key === "Enter") goToList();
+    if (event.key === "Enter") {
+      event.preventDefault();
+      goToList();
+    }
   });
 
   qsa(".quick-tags button").forEach((button) => {
@@ -680,7 +719,12 @@ function setupArticleLikes() {
     const likes = readLikes();
     const id = button.dataset.likeId;
     const base = Number(button.dataset.likeBase || 0);
-    button.querySelector("strong").textContent = String(Number(likes[id] ?? base));
+    const record = likeRecord(likes, id, base);
+    button.querySelector("strong").textContent = String(record.count);
+    button.querySelector("span").textContent = record.liked ? "LIKED" : "LIKE";
+    button.classList.toggle("is-liked", record.liked);
+    button.disabled = record.liked;
+    button.setAttribute("aria-pressed", record.liked ? "true" : "false");
   });
 
   document.addEventListener("click", (event) => {
@@ -689,12 +733,16 @@ function setupArticleLikes() {
     const likes = readLikes();
     const id = button.dataset.likeId;
     const base = Number(button.dataset.likeBase || 0);
-    const next = Number(likes[id] ?? base) + 1;
-    likes[id] = next;
+    const record = likeRecord(likes, id, base);
+    if (record.liked) return;
+    const next = record.count + 1;
+    likes[id] = { count: next, liked: true };
     writeLikes(likes);
     button.querySelector("strong").textContent = String(next);
+    button.querySelector("span").textContent = "LIKED";
     button.classList.add("is-liked");
-    window.setTimeout(() => button.classList.remove("is-liked"), 420);
+    button.disabled = true;
+    button.setAttribute("aria-pressed", "true");
   });
 }
 

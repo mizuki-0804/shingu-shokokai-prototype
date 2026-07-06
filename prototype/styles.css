@@ -590,55 +590,62 @@ select {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
 }
 
 .category-shortcuts {
   max-width: 940px;
   margin: 14px auto 0;
+  padding: 12px;
+  border: 2px solid #000;
+  background: #fff;
+  box-shadow: 6px 6px 0 #000;
 }
 
 .category-shortcuts span,
 .filter-shortcuts span {
+  flex: 0 0 auto;
+  margin-right: 4px;
   color: var(--muted);
   font-size: 12px;
   font-weight: 900;
   letter-spacing: 0.08em;
 }
 
-.category-shortcuts a,
+.category-shortcuts button,
 .filter-shortcuts button {
   position: relative;
   display: inline-flex;
   align-items: center;
-  min-height: 40px;
-  padding: 8px 34px 8px 14px;
-  border: 2px solid #000;
-  border-radius: 999px;
+  justify-content: center;
+  min-height: 38px;
+  padding: 8px 16px;
+  border: 1px solid #000;
+  border-radius: 0;
   color: #000;
   background: #fff;
   font-size: 13px;
   font-weight: 900;
   text-decoration: none;
   cursor: pointer;
-  box-shadow: 4px 4px 0 #000;
-  transition: transform 0.25s var(--motion-ease), box-shadow 0.25s ease, background 0.25s ease;
+  box-shadow: none;
+  transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease;
 }
 
-.category-shortcuts a::after,
-.filter-shortcuts button::after {
-  content: "→";
-  position: absolute;
-  right: 12px;
-  font-weight: 900;
-}
-
-.category-shortcuts a:hover,
+.category-shortcuts button:hover,
+.category-shortcuts button.is-active,
 .filter-shortcuts button:hover,
 .filter-shortcuts button.is-active {
+  color: #000;
   background: var(--accent);
-  box-shadow: 1px 1px 0 #000;
-  transform: translate(3px, 3px);
+  transform: translateY(-2px);
+}
+
+.category-shortcuts button.is-active,
+.filter-shortcuts button.is-active {
+  border-width: 2px;
+  color: #fff;
+  background: #000;
 }
 
 .tsukigi-newsline {
@@ -2371,6 +2378,14 @@ select {
   transform: translate(2px, 2px);
 }
 
+.like-button:disabled {
+  cursor: default;
+}
+
+.like-button.is-liked span {
+  color: #000;
+}
+
 .section-more {
   margin-top: 22px;
   text-align: center;
@@ -3491,7 +3506,9 @@ select {
 
   .category-shortcuts {
     margin: 12px 20px 0;
+    padding: 10px;
     gap: 8px;
+    box-shadow: 4px 4px 0 #000;
   }
 
   .category-shortcuts span,
@@ -3499,12 +3516,11 @@ select {
     flex-basis: 100%;
   }
 
-  .category-shortcuts a,
+  .category-shortcuts button,
   .filter-shortcuts button {
     min-height: 38px;
-    padding: 8px 30px 8px 12px;
+    padding: 8px 12px;
     font-size: 12px;
-    box-shadow: 3px 3px 0 #000;
   }
 
   .tsukigi-newsline {
