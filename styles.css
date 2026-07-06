@@ -1384,6 +1384,10 @@ select {
 
 .page-hero h1 {
   color: var(--ink);
+  max-width: 1040px;
+  font-size: clamp(30px, 4.8vw, 62px);
+  line-height: 1.15;
+  white-space: nowrap;
 }
 
 .page-hero p:not(.eyebrow) {
@@ -1702,6 +1706,7 @@ h1 {
   font-weight: 700;
   line-height: 1.12;
   letter-spacing: 0;
+  text-wrap: pretty;
 }
 
 h2 {
@@ -2047,7 +2052,9 @@ select {
 
 .ad-card h3 {
   margin: 6px 0;
-  font-size: 24px;
+  font-size: 18px;
+  line-height: 1.38;
+  text-wrap: pretty;
 }
 
 .ad-card p {
@@ -2145,7 +2152,9 @@ select {
 
 .feature-card h3 {
   margin: 8px 0;
-  font-size: 22px;
+  font-size: 21px;
+  line-height: 1.45;
+  text-wrap: pretty;
 }
 
 .feature-card p,
@@ -2454,8 +2463,14 @@ select {
   margin: 0;
   min-width: 0;
   overflow-wrap: normal;
-  text-wrap: balance;
-  font-size: 20px;
+  text-wrap: pretty;
+  font-size: 18px;
+  line-height: 1.35;
+}
+
+.compact-list .business-card h3,
+.home-page .business-card h3 {
+  font-size: 18px;
 }
 
 .business-card .business-meta,
@@ -2788,6 +2803,9 @@ select {
 
 .detail-hero h1 {
   color: var(--ink);
+  max-width: 720px;
+  font-size: clamp(36px, 4.2vw, 52px);
+  line-height: 1.14;
 }
 
 .detail-hero p:not(.eyebrow) {
