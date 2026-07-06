@@ -328,6 +328,50 @@ function setupHeroSearch() {
   });
 }
 
+function setupHeroSlider() {
+  const hero = qs(".tsukigi-visual");
+  if (!hero) return;
+
+  const slides = qsa(".visual-slides img");
+  const buttons = qsa(".visual-progress button");
+  if (slides.length <= 1 || buttons.length === 0) return;
+
+  let activeIndex = 0;
+  let timer = null;
+  const intervalMs = 5000;
+
+  const showSlide = (index) => {
+    activeIndex = (index + slides.length) % slides.length;
+    slides.forEach((slide, slideIndex) => {
+      slide.classList.toggle("is-active", slideIndex === activeIndex);
+    });
+    buttons.forEach((button, buttonIndex) => {
+      const isActive = buttonIndex === activeIndex;
+      button.classList.toggle("is-active", isActive);
+      button.setAttribute("aria-current", isActive ? "true" : "false");
+    });
+    hero.style.setProperty("--slide-progress", `${((activeIndex + 1) / slides.length) * 100}%`);
+  };
+
+  const start = () => {
+    window.clearInterval(timer);
+    timer = window.setInterval(() => showSlide(activeIndex + 1), intervalMs);
+  };
+
+  buttons.forEach((button) => {
+    button.addEventListener("click", () => {
+      showSlide(Number(button.dataset.slide || 0));
+      start();
+    });
+  });
+
+  hero.addEventListener("mouseenter", () => window.clearInterval(timer));
+  hero.addEventListener("mouseleave", start);
+
+  showSlide(0);
+  start();
+}
+
 function hydrateListQuery() {
   const keywordFilter = qs("#keyword-filter");
   if (!keywordFilter) return;
@@ -559,6 +603,7 @@ renderBusinessPreview();
 hydrateListQuery();
 setupFilters();
 setupHeroSearch();
+setupHeroSlider();
 renderBusinessList();
 renderDetailPage();
 setupPageMotion();

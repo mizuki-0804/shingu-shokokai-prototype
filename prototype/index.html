@@ -49,7 +49,11 @@
         </div>
 
         <div class="tsukigi-visual" aria-label="メインビジュアル">
-          <img src="https://www.crossroadfukuoka.jp/storage/tourism_attractions/11453/responsive_images/plHyVYdYjfSD4JHmXDMaGJwbAh0hnnABiRD1fG7M__1611_1074.jpg" alt="相島と新宮町の海岸、市街地を望む風景">
+          <div class="visual-slides" aria-live="polite">
+            <img class="is-active" src="https://www.crossroadfukuoka.jp/storage/tourism_attractions/11453/responsive_images/plHyVYdYjfSD4JHmXDMaGJwbAh0hnnABiRD1fG7M__1611_1074.jpg" alt="相島と新宮町の海岸、市街地を望む風景">
+            <img src="https://images.unsplash.com/photo-1556741533-411cf82e4e2d?auto=format&fit=crop&w=1800&q=82" alt="地域のお店で商品を手渡す様子">
+            <img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1800&q=82" alt="地域事業者が打ち合わせをする様子">
+          </div>
           <p class="visual-whats">SHINGU MEDIA</p>
           <div class="visual-message">
             <p class="visual-kicker">新宮町商工会 地域メディア</p>
@@ -61,10 +65,12 @@
             <a href="./businesses.html"><span>MEMBERS</span>会員企業を探す</a>
             <a href="#support"><span>SUPPORT</span>経営相談へ</a>
           </div>
-          <div class="visual-progress" aria-hidden="true">
-            <span>01</span>
+          <div class="visual-progress" aria-label="メインビジュアルのスライド切り替え">
+            <button type="button" class="is-active" data-slide="0" aria-label="スライド1を表示">01</button>
             <i></i>
-            <span>02</span>
+            <button type="button" data-slide="1" aria-label="スライド2を表示">02</button>
+            <i></i>
+            <button type="button" data-slide="2" aria-label="スライド3を表示">03</button>
           </div>
         </div>
 
