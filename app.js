@@ -12,6 +12,7 @@ const state = {
 };
 
 let revealObserver = null;
+const likeStorageKey = "shingu-article-likes";
 
 function qs(selector) {
   return document.querySelector(selector);
@@ -19,6 +20,37 @@ function qs(selector) {
 
 function qsa(selector) {
   return [...document.querySelectorAll(selector)];
+}
+
+function articleLikeId(prefix, article) {
+  return `${prefix}-${encodeURIComponent(`${article.date}-${article.title}`)}`;
+}
+
+function readLikes() {
+  try {
+    return JSON.parse(localStorage.getItem(likeStorageKey) || "{}");
+  } catch (error) {
+    return {};
+  }
+}
+
+function writeLikes(likes) {
+  try {
+    localStorage.setItem(likeStorageKey, JSON.stringify(likes));
+  } catch (error) {
+    // File previews and private browsing can block storage; the button still updates for the current click.
+  }
+}
+
+function likeButton(id, baseCount = 0) {
+  const likes = readLikes();
+  const count = Number(likes[id] ?? baseCount);
+  return `
+    <button class="like-button" type="button" data-like-id="${id}" data-like-base="${baseCount}" aria-label="この記事にいいねする">
+      <span aria-hidden="true">LIKE</span>
+      <strong>${count}</strong>
+    </button>
+  `;
 }
 
 function mapUrl(business) {
@@ -158,13 +190,16 @@ function renderFeatureList() {
     .map(
       (feature, index) => `
       <article class="feature-card ${index === 0 ? "large" : ""}">
-        <img src="${feature.image}" alt="${feature.title}のイメージ写真" loading="lazy">
+        <div class="card-media"><img src="${feature.image}" alt="${feature.title}のイメージ写真" loading="lazy"></div>
         <div>
           <span>${feature.category}</span>
           <time>${feature.date}</time>
           <h3>${feature.title}</h3>
           <p>${feature.excerpt}</p>
-          <small>#${feature.tag}</small>
+          <footer class="article-actions">
+            <small>#${feature.tag}</small>
+            ${likeButton(articleLikeId("feature", feature), 12 + index * 4)}
+          </footer>
         </div>
       </article>
     `
@@ -173,15 +208,19 @@ function renderFeatureList() {
 }
 
 function articleCard(article) {
+  const id = articleLikeId("latest", article);
   return `
     <article class="article-card">
-      <img src="${article.image}" alt="${article.title}のイメージ写真" loading="lazy">
+      <div class="card-media"><img src="${article.image}" alt="${article.title}のイメージ写真" loading="lazy"></div>
       <div>
         <span>${article.category}</span>
         <time>${article.date}</time>
         <h3>${article.title}</h3>
         <p>${article.excerpt}</p>
-        <small>${article.author}</small>
+        <footer class="article-actions">
+          <small>${article.author}</small>
+          ${likeButton(id, 8)}
+        </footer>
       </div>
     </article>
   `;
@@ -282,12 +321,22 @@ function setupFilters() {
   const areaFilter = qs("#area-filter");
   const keywordFilter = qs("#keyword-filter");
   const reset = qs("#reset-filters");
+  const shortcutButtons = qsa("[data-filter-category]");
 
   fillSelect(categoryFilter, uniqueValues("category"));
   fillSelect(areaFilter, uniqueValues("area"));
 
+  const syncShortcutState = () => {
+    shortcutButtons.forEach((button) => {
+      const isActive = button.dataset.filterCategory === state.category;
+      button.classList.toggle("is-active", isActive);
+      button.setAttribute("aria-pressed", isActive ? "true" : "false");
+    });
+  };
+
   categoryFilter?.addEventListener("change", (event) => {
     state.category = event.target.value;
+    syncShortcutState();
     renderBusinessList();
   });
 
@@ -301,6 +350,15 @@ function setupFilters() {
     renderBusinessList();
   });
 
+  shortcutButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      state.category = button.dataset.filterCategory || "";
+      if (categoryFilter) categoryFilter.value = state.category;
+      syncShortcutState();
+      renderBusinessList();
+    });
+  });
+
   reset?.addEventListener("click", () => {
     state.category = "";
     state.area = "";
@@ -308,8 +366,11 @@ function setupFilters() {
     if (categoryFilter) categoryFilter.value = "";
     if (areaFilter) areaFilter.value = "";
     if (keywordFilter) keywordFilter.value = "";
+    syncShortcutState();
     renderBusinessList();
   });
+
+  syncShortcutState();
 }
 
 function setupHeroSearch() {
@@ -381,14 +442,27 @@ function setupHeroSlider() {
 }
 
 function hydrateListQuery() {
+  const categoryFilter = qs("#category-filter");
+  const areaFilter = qs("#area-filter");
   const keywordFilter = qs("#keyword-filter");
-  if (!keywordFilter) return;
+  if (!keywordFilter && !categoryFilter && !areaFilter) return;
   const params = new URLSearchParams(window.location.search);
   const query = params.get("q") || "";
+  const category = params.get("category") || "";
+  const area = params.get("area") || "";
+  if (category) state.category = category;
+  if (area) state.area = area;
   if (query) {
     state.keyword = query;
-    keywordFilter.value = query;
   }
+  if (categoryFilter) categoryFilter.value = state.category;
+  if (areaFilter) areaFilter.value = state.area;
+  if (keywordFilter) keywordFilter.value = state.keyword;
+  qsa("[data-filter-category]").forEach((button) => {
+    const isActive = button.dataset.filterCategory === state.category;
+    button.classList.toggle("is-active", isActive);
+    button.setAttribute("aria-pressed", isActive ? "true" : "false");
+  });
 }
 
 function renderDetailPage() {
@@ -601,6 +675,29 @@ function setupPageMotion() {
   });
 }
 
+function setupArticleLikes() {
+  qsa("[data-like-id]").forEach((button) => {
+    const likes = readLikes();
+    const id = button.dataset.likeId;
+    const base = Number(button.dataset.likeBase || 0);
+    button.querySelector("strong").textContent = String(Number(likes[id] ?? base));
+  });
+
+  document.addEventListener("click", (event) => {
+    const button = event.target.closest("[data-like-id]");
+    if (!button) return;
+    const likes = readLikes();
+    const id = button.dataset.likeId;
+    const base = Number(button.dataset.likeBase || 0);
+    const next = Number(likes[id] ?? base) + 1;
+    likes[id] = next;
+    writeLikes(likes);
+    button.querySelector("strong").textContent = String(next);
+    button.classList.add("is-liked");
+    window.setTimeout(() => button.classList.remove("is-liked"), 420);
+  });
+}
+
 renderFeatureList();
 renderLatestArticles();
 renderInterviews();
@@ -608,10 +705,11 @@ renderSeries();
 renderRanking();
 renderAdSlots();
 renderBusinessPreview();
-hydrateListQuery();
 setupFilters();
+hydrateListQuery();
 setupHeroSearch();
 setupHeroSlider();
+setupArticleLikes();
 renderBusinessList();
 renderDetailPage();
 setupPageMotion();

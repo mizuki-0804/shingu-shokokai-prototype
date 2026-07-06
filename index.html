@@ -9,7 +9,7 @@
       content="新宮町のお店・会社・人を知り、経営相談や地域の情報にアクセスできる新宮町商工会の地域メディア"
     />
     <meta name="robots" content="noindex, nofollow, noarchive" />
-    <link rel="stylesheet" href="./styles.css?v=20260707-type1" />
+    <link rel="stylesheet" href="./styles.css?v=20260707-like1" />
   </head>
   <body class="home-page">
     <header class="site-header">
@@ -80,6 +80,14 @@
           <input id="hero-query" name="q" type="search" placeholder="会員企業・お店・業種で探す" />
           <button id="hero-search-button" type="submit">検索</button>
         </form>
+        <div class="category-shortcuts" aria-label="業種から探す">
+          <span>業種から探す</span>
+          <a href="./businesses.html?category=飲食">飲食</a>
+          <a href="./businesses.html?category=建設">住まい・建設</a>
+          <a href="./businesses.html?category=美容">美容</a>
+          <a href="./businesses.html?category=健康">健康</a>
+          <a href="./businesses.html?category=サービス">サービス</a>
+        </div>
       </section>
 
       <section class="tsukigi-newsline" aria-labelledby="news-overview-title">
@@ -176,11 +184,20 @@
           <h2 id="features-title">まちの仕事</h2>
         </div>
         <article class="feature-lead-story">
-          <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=1300&q=82" alt="地域のお店で接客する事業者の様子">
+          <div class="lead-media">
+            <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=1300&q=82" alt="地域のお店で接客する事業者の様子">
+          </div>
           <div>
             <span>FEATURED STORY</span>
             <h3>地域の仕事を、地域の人に届く言葉へ。</h3>
             <p>お店や会社の取り組みを知ることで、地元で買う・頼む・相談するきっかけが生まれます。</p>
+            <footer class="article-actions">
+              <small>新宮町商工会</small>
+              <button class="like-button" type="button" data-like-id="featured-story-main" data-like-base="24" aria-label="この記事にいいねする">
+                <span aria-hidden="true">LIKE</span>
+                <strong>24</strong>
+              </button>
+            </footer>
           </div>
         </article>
         <div class="section-heading split-heading subdued-heading">
@@ -319,6 +336,6 @@
     </footer>
 
     <script src="./data.js?v=20260706-copy1"></script>
-    <script src="./app.js?v=20260706-copy1"></script>
+    <script src="./app.js?v=20260707-like1"></script>
   </body>
 </html>
