@@ -623,13 +623,16 @@ function prepareMotionItems(root = document) {
     ".video-case-section"
   ];
 
-  const items = [...root.querySelectorAll(selectors.join(","))]
-    .filter((item) => !item.classList.contains("reveal-item"));
+  const items = [...root.querySelectorAll(selectors.join(","))];
 
   items.forEach((item, index) => {
-    item.classList.add("reveal-item");
-    item.style.setProperty("--reveal-delay", `${Math.min((index % 7) * 70, 420)}ms`);
-    if (revealObserver) revealObserver.observe(item);
+    if (!item.classList.contains("reveal-item")) {
+      item.classList.add("reveal-item");
+      item.style.setProperty("--reveal-delay", `${Math.min((index % 7) * 70, 420)}ms`);
+    }
+    if (revealObserver && !item.classList.contains("is-visible")) {
+      revealObserver.observe(item);
+    }
   });
 
   [...root.querySelectorAll("h1, h2, h3")]
