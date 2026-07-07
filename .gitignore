@@ -1,4 +1,12 @@
 .DS_Store
 node_modules/
+node_modules
 outputs/
 *.log
+
+# 内部資料・ローカル設定（公開リポジトリには含めない）
+.claude/
+docs/
+scripts/
+商工会/
+tmp/
