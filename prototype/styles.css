@@ -29,6 +29,11 @@ body {
   background: #fff;
 }
 
+body,
+body * {
+  font-family: "Hiragino Sans", "Yu Gothic", "YuGothic", Meiryo, -apple-system, BlinkMacSystemFont, sans-serif !important;
+}
+
 body::before {
   content: "";
   position: fixed;
@@ -256,7 +261,7 @@ select {
 .tsukigi-site-logo small {
   display: block;
   margin-top: 2px;
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: "Hiragino Sans", "Yu Gothic", "YuGothic", Meiryo, -apple-system, BlinkMacSystemFont, sans-serif;
   font-size: 12px;
   letter-spacing: 0.08em;
 }
@@ -375,7 +380,7 @@ select {
   top: clamp(18px, 3.8vw, 44px);
   margin: 0;
   color: rgba(255, 255, 255, 0.22);
-  font-family: Impact, "Arial Black", "Helvetica Neue", sans-serif;
+  font-family: "Hiragino Sans", "Yu Gothic", "YuGothic", Meiryo, -apple-system, BlinkMacSystemFont, sans-serif;
   font-size: clamp(54px, 10vw, 150px);
   font-weight: 900;
   line-height: 0.86;
@@ -448,7 +453,7 @@ select {
   align-items: center;
   gap: 12px;
   color: #fff;
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: "Hiragino Sans", "Yu Gothic", "YuGothic", Meiryo, -apple-system, BlinkMacSystemFont, sans-serif;
   font-weight: 900;
 }
 
@@ -526,7 +531,7 @@ select {
 
 .visual-link-panels span {
   color: #222;
-  font-family: "Arial Black", "Helvetica Neue", sans-serif;
+  font-family: "Hiragino Sans", "Yu Gothic", "YuGothic", Meiryo, -apple-system, BlinkMacSystemFont, sans-serif;
   font-size: 11px;
   letter-spacing: 0.3em;
 }
@@ -547,7 +552,7 @@ select {
 .tsukigi-search label {
   padding: 0 22px;
   color: #000;
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: "Hiragino Sans", "Yu Gothic", "YuGothic", Meiryo, -apple-system, BlinkMacSystemFont, sans-serif;
   font-size: 12px;
   font-weight: 900;
   letter-spacing: 0.28em;
@@ -651,7 +656,7 @@ select {
 
 .tsukigi-newsline h2 {
   margin: 0;
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: "Hiragino Sans", "Yu Gothic", "YuGothic", Meiryo, -apple-system, BlinkMacSystemFont, sans-serif;
   font-size: 16px;
   font-weight: 900;
   letter-spacing: 0.38em;
@@ -671,7 +676,7 @@ select {
 
 .tsukigi-newsline .simple-news-list time {
   color: #000;
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: "Hiragino Sans", "Yu Gothic", "YuGothic", Meiryo, -apple-system, BlinkMacSystemFont, sans-serif;
   font-size: 14px;
   font-weight: 900;
   letter-spacing: 0.22em;
@@ -775,7 +780,7 @@ select {
   display: inline-block;
   margin-bottom: 18px;
   color: var(--green);
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: "Hiragino Sans", "Yu Gothic", "YuGothic", Meiryo, -apple-system, BlinkMacSystemFont, sans-serif;
   font-size: 13px;
   font-weight: 900;
   letter-spacing: 0.22em;
@@ -840,7 +845,7 @@ select {
 
 .pickup-card-list time {
   color: #000;
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: "Hiragino Sans", "Yu Gothic", "YuGothic", Meiryo, -apple-system, BlinkMacSystemFont, sans-serif;
   font-size: 12px;
   font-weight: 900;
   letter-spacing: 0.12em;
@@ -896,7 +901,7 @@ select {
   border-radius: 0;
   color: var(--green);
   background: transparent;
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: "Hiragino Sans", "Yu Gothic", "YuGothic", Meiryo, -apple-system, BlinkMacSystemFont, sans-serif;
   font-size: 13px;
   letter-spacing: 0.28em;
 }
@@ -983,7 +988,7 @@ select {
   display: inline-block;
   margin-bottom: 12px;
   color: #000;
-  font-family: "Arial Black", "Helvetica Neue", sans-serif;
+  font-family: "Hiragino Sans", "Yu Gothic", "YuGothic", Meiryo, -apple-system, BlinkMacSystemFont, sans-serif;
   font-size: 12px;
   letter-spacing: 0.28em;
 }
@@ -1057,7 +1062,7 @@ select {
 .home-page .interview-card span,
 .home-page .article-card span {
   color: var(--green);
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: "Hiragino Sans", "Yu Gothic", "YuGothic", Meiryo, -apple-system, BlinkMacSystemFont, sans-serif;
   letter-spacing: 0.18em;
 }
 
@@ -1090,7 +1095,7 @@ select {
 .function-heading p,
 .function-grid span {
   margin: 0;
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: "Hiragino Sans", "Yu Gothic", "YuGothic", Meiryo, -apple-system, BlinkMacSystemFont, sans-serif;
   font-size: 13px;
   font-weight: 900;
   letter-spacing: 0.28em;
@@ -1259,7 +1264,7 @@ select {
   gap: 14px;
   margin: 0 0 26px;
   color: var(--green);
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: "Hiragino Sans", "Yu Gothic", "YuGothic", Meiryo, -apple-system, BlinkMacSystemFont, sans-serif;
   font-size: 13px;
   font-weight: 700;
   letter-spacing: 0;
@@ -1292,7 +1297,7 @@ select {
 .hero-index span {
   margin-bottom: auto;
   color: var(--muted);
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: "Hiragino Sans", "Yu Gothic", "YuGothic", Meiryo, -apple-system, BlinkMacSystemFont, sans-serif;
   font-size: 12px;
   font-weight: 700;
 }
@@ -1366,7 +1371,7 @@ select {
   padding: 0 24px;
   color: #fff;
   background: var(--ink);
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: "Hiragino Sans", "Yu Gothic", "YuGothic", Meiryo, -apple-system, BlinkMacSystemFont, sans-serif;
   font-weight: 700;
 }
 
@@ -1402,7 +1407,7 @@ select {
   padding: 4px 9px;
   color: var(--ink);
   background: #fff;
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: "Hiragino Sans", "Yu Gothic", "YuGothic", Meiryo, -apple-system, BlinkMacSystemFont, sans-serif;
   font-size: 12px;
   font-weight: 700;
 }
@@ -1443,7 +1448,7 @@ select {
 
 .editorial-rail span {
   color: var(--green);
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: "Hiragino Sans", "Yu Gothic", "YuGothic", Meiryo, -apple-system, BlinkMacSystemFont, sans-serif;
   font-size: 12px;
   font-weight: 700;
 }
@@ -1599,7 +1604,7 @@ select {
   padding: 3px 8px;
   color: #fff;
   background: rgba(36, 35, 31, 0.78);
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: "Hiragino Sans", "Yu Gothic", "YuGothic", Meiryo, -apple-system, BlinkMacSystemFont, sans-serif;
   font-size: 12px;
   letter-spacing: 0;
 }
@@ -1698,7 +1703,7 @@ select {
 
 .hero-media-strip span {
   color: var(--green);
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: "Hiragino Sans", "Yu Gothic", "YuGothic", Meiryo, -apple-system, BlinkMacSystemFont, sans-serif;
   font-size: 12px;
   font-weight: 700;
 }
@@ -1974,7 +1979,7 @@ select {
 }
 
 .whats-heading span {
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: "Hiragino Sans", "Yu Gothic", "YuGothic", Meiryo, -apple-system, BlinkMacSystemFont, sans-serif;
   font-size: clamp(34px, 5vw, 72px);
   color: rgba(37, 35, 31, 0.14);
   line-height: 1;
@@ -1994,7 +1999,7 @@ select {
 }
 
 .news-heading h2 {
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: "Hiragino Sans", "Yu Gothic", "YuGothic", Meiryo, -apple-system, BlinkMacSystemFont, sans-serif;
   font-size: clamp(44px, 7vw, 92px);
   font-weight: 400;
 }
@@ -2392,10 +2397,17 @@ select {
   align-items: center;
   justify-content: center;
   border-radius: 999px;
-  color: #fff;
-  background: #1877f2;
-  font-size: 11px;
+  color: #1877f2;
+  background: transparent;
   line-height: 1;
+  transform: translateY(5px);
+}
+
+.like-button .like-icon svg {
+  display: block;
+  width: 15px;
+  height: 15px;
+  fill: currentColor;
 }
 
 .like-button .like-label {

@@ -4,6 +4,11 @@ const latestArticles = window.SHINGU_DATA.latestArticles;
 const interviews = window.SHINGU_DATA.interviews;
 const series = window.SHINGU_DATA.series;
 const adSlots = window.SHINGU_DATA.adSlots;
+const likeIconSvg = `
+  <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+    <path d="M7 10v11H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3Zm2 11V9.4l4.2-6.1c.3-.5.9-.7 1.5-.5 1.1.3 1.7 1.4 1.5 2.5L15.6 9H20a2 2 0 0 1 2 2.3l-1.1 7A3.2 3.2 0 0 1 17.7 21H9Z" />
+  </svg>
+`;
 
 const state = {
   category: "",
@@ -58,7 +63,7 @@ function likeButton(id, baseCount = 0) {
   const record = likeRecord(likes, id, baseCount);
   return `
     <button class="like-button ${record.liked ? "is-liked" : ""}" type="button" data-like-id="${id}" data-like-base="${baseCount}" aria-label="この記事にいいねする" aria-pressed="${record.liked ? "true" : "false"}" ${record.liked ? "disabled" : ""}>
-      <span class="like-icon" aria-hidden="true">👍</span>
+      <span class="like-icon" aria-hidden="true">${likeIconSvg}</span>
       <span class="like-label" aria-hidden="true">いいね！</span>
       <strong>${record.count}</strong>
     </button>
