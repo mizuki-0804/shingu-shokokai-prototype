@@ -9,273 +9,351 @@
       content="新宮町のお店・会社・人を知り、経営相談や地域の情報にアクセスできる新宮町商工会の地域メディア"
     />
     <meta name="robots" content="noindex, nofollow, noarchive" />
-    <link rel="stylesheet" href="./styles.css?v=20260707-copyfix1" />
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='48' fill='%231d4f7e'/><text x='50' y='68' font-size='52' text-anchor='middle' fill='%23f7f5ef'>新</text></svg>" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@700;900&family=Space+Grotesk:wght@400;500;600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./home.css?v=20260708-blue1" />
   </head>
-  <body class="home-page">
-    <header class="site-header">
-      <a class="brand" href="./index.html" aria-label="トップへ">
+  <body class="home">
+    <!-- Opening -->
+    <div class="opening" id="opening" aria-hidden="true">
+      <div class="opening-stage">
+        <span class="opening-mark">新</span>
+        <p class="opening-title">新宮町商工会</p>
+        <p class="opening-sub">SHINGU LOCAL MEDIA</p>
+      </div>
+      <div class="opening-curtain"></div>
+    </div>
+
+    <div class="page-progress" aria-hidden="true"><i></i></div>
+
+    <header class="site-header" id="site-header">
+      <a class="brand" href="./index.html" aria-label="新宮町商工会 トップへ">
         <span class="brand-mark">新</span>
-        <span>
+        <span class="brand-text">
           <strong>新宮町商工会</strong>
-          <small>まちの仕事と暮らし</small>
+          <small>SHINGU LOCAL MEDIA</small>
         </span>
       </a>
       <nav class="site-nav" aria-label="主要ナビゲーション">
-        <a href="./index.html#features">地域記事</a>
-        <a href="./index.html#interviews">事業者の声</a>
-        <a href="./businesses.html">会員企業一覧</a>
+        <a href="#features">地域記事</a>
+        <a href="#interviews">事業者の声</a>
+        <a href="./businesses.html">会員企業</a>
+        <a href="./plans.html">掲載プラン</a>
         <a href="#news">お知らせ</a>
-        <a class="nav-cta" href="#contact">相談する</a>
       </nav>
+      <a class="header-cta" href="#contact"><span>相談する</span></a>
+      <button class="menu-toggle" id="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="メニューを開く">
+        <i></i><i></i>
+      </button>
     </header>
 
+    <nav class="mobile-menu" id="mobile-menu" aria-label="モバイルメニュー" hidden>
+      <a href="#features">地域記事</a>
+      <a href="#interviews">事業者の声</a>
+      <a href="./businesses.html">会員企業一覧</a>
+      <a href="./plans.html">掲載プラン</a>
+      <a href="#news">お知らせ</a>
+      <a class="mobile-menu-cta" href="#contact">商工会に相談する</a>
+    </nav>
+
     <main id="top">
-      <section class="tsukigi-home" aria-labelledby="hero-title">
-        <div class="tsukigi-brand-row">
-          <div class="tsukigi-site-logo" aria-label="新宮町商工会 地域メディア">
-            <span class="logo-circle">新</span>
-            <div>
-              <strong>新宮町商工会</strong>
-              <small>Shingu Shokokai</small>
+      <!-- ============ HERO ============ -->
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-media" aria-hidden="true">
+          <figure class="hero-slide is-active">
+            <img src="https://www.crossroadfukuoka.jp/storage/tourism_attractions/11453/responsive_images/plHyVYdYjfSD4JHmXDMaGJwbAh0hnnABiRD1fG7M__1611_1074.jpg" alt="" />
+          </figure>
+          <figure class="hero-slide">
+            <img src="https://images.unsplash.com/photo-1556741533-411cf82e4e2d?auto=format&fit=crop&w=1800&q=82" alt="" />
+          </figure>
+          <figure class="hero-slide">
+            <img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1800&q=82" alt="" />
+          </figure>
+          <div class="hero-scrim"></div>
+        </div>
+
+        <p class="hero-giant" data-parallax="-0.12" aria-hidden="true">SHINGU</p>
+
+        <div class="hero-inner">
+          <p class="hero-kicker" data-hero-seq="1">
+            <span class="kicker-line"></span>新宮町商工会 地域メディア <em>SHINGU LOCAL MEDIA</em>
+          </p>
+          <h1 id="hero-title" class="hero-title">
+            <span class="hero-line" data-split data-hero-seq="2">新宮町の仕事を、</span>
+            <span class="hero-line" data-split data-hero-seq="3">地域の力に。</span>
+          </h1>
+          <p class="hero-lead" data-hero-seq="4">
+            まちのお店・会社・人を知る。暮らしの相談先を探す。<br />
+            福岡県糟屋郡新宮町の仕事と暮らしを届けるローカルメディアです。
+          </p>
+          <div class="hero-panels" data-hero-seq="5" aria-label="おすすめのメニュー">
+            <a href="#features"><span>STORIES</span><strong>地域記事を読む</strong><i aria-hidden="true">→</i></a>
+            <a href="./businesses.html"><span>MEMBERS</span><strong>会員企業を探す</strong><i aria-hidden="true">→</i></a>
+            <a href="#contact"><span>SUPPORT</span><strong>商工会に相談する</strong><i aria-hidden="true">→</i></a>
+          </div>
+        </div>
+
+        <div class="hero-progress" data-hero-seq="6" aria-label="メインビジュアルの切り替え">
+          <button type="button" class="is-active" data-slide="0" aria-label="スライド1を表示"><em>01</em><i></i></button>
+          <button type="button" data-slide="1" aria-label="スライド2を表示"><em>02</em><i></i></button>
+          <button type="button" data-slide="2" aria-label="スライド3を表示"><em>03</em><i></i></button>
+        </div>
+
+        <a class="hero-scroll" href="#search-dock" data-hero-seq="6"><span>SCROLL</span><i aria-hidden="true"></i></a>
+      </section>
+
+      <!-- ============ SEARCH DOCK ============ -->
+      <section class="search-dock" id="search-dock" aria-label="会員企業を検索" data-hero-seq="6">
+        <form class="dock-form" action="./businesses.html">
+          <p class="dock-label"><em>SEARCH</em>会員企業をさがす</p>
+          <div class="dock-row">
+            <div class="dock-field">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2"/><path d="m16.5 16.5 5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+              <label class="visually-hidden" for="hero-query">キーワード</label>
+              <input id="hero-query" name="q" type="search" placeholder="お店の名前、業種、地域名など" />
+              <input id="hero-category" name="category" type="hidden" value="" />
             </div>
+            <button id="hero-search-button" class="dock-submit" type="submit">検索する</button>
           </div>
-          <p>新宮町の仕事と暮らしを届ける地域メディア</p>
-          <nav class="tsukigi-top-links" aria-label="トップメニュー">
-            <a href="./businesses.html">事業者を探す</a>
-            <a href="#features">地域記事</a>
-            <a href="#support">経営相談</a>
-            <a href="#join">入会案内</a>
-            <a href="#contact">アクセス</a>
-          </nav>
-        </div>
-
-        <div class="tsukigi-visual" aria-label="メインビジュアル">
-          <div class="visual-slides" aria-live="polite">
-            <img class="is-active" src="https://www.crossroadfukuoka.jp/storage/tourism_attractions/11453/responsive_images/plHyVYdYjfSD4JHmXDMaGJwbAh0hnnABiRD1fG7M__1611_1074.jpg" alt="相島と新宮町の海岸、市街地を望む風景">
-            <img src="https://images.unsplash.com/photo-1556741533-411cf82e4e2d?auto=format&fit=crop&w=1800&q=82" alt="地域のお店で商品を手渡す様子">
-            <img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1800&q=82" alt="地域事業者が打ち合わせをする様子">
+          <div class="dock-chips" role="tablist" aria-label="業種から探す">
+            <span>業種から</span>
+            <button type="button" class="is-active" data-hero-category="" role="tab" aria-selected="true">すべて</button>
+            <button type="button" data-hero-category="飲食" role="tab" aria-selected="false">飲食</button>
+            <button type="button" data-hero-category="建設" role="tab" aria-selected="false">住まい・建設</button>
+            <button type="button" data-hero-category="美容" role="tab" aria-selected="false">美容</button>
+            <button type="button" data-hero-category="健康" role="tab" aria-selected="false">健康</button>
+            <button type="button" data-hero-category="サービス" role="tab" aria-selected="false">サービス</button>
           </div>
-          <p class="visual-whats">SHINGU MEDIA</p>
-          <div class="visual-message">
-            <p class="visual-kicker">新宮町商工会 地域メディア</p>
-            <h1 id="hero-title">新宮町の仕事を、<br>地域の力に。</h1>
-            <p class="visual-lead">地域の仕事を知り、<br>お店探しや経営相談に役立てられます。</p>
-          </div>
-          <div class="visual-link-panels" aria-label="おすすめのメニュー">
-            <a href="#features"><span>STORIES</span>地域記事を読む</a>
-            <a href="./businesses.html"><span>MEMBERS</span>会員企業を探す</a>
-            <a href="#contact"><span>SUPPORT</span>商工会に相談する</a>
-          </div>
-          <div class="visual-progress" aria-label="メインビジュアルのスライド切り替え">
-            <button type="button" class="is-active" data-slide="0" aria-label="スライド1を表示">01</button>
-            <i></i>
-            <button type="button" data-slide="1" aria-label="スライド2を表示">02</button>
-            <i></i>
-            <button type="button" data-slide="2" aria-label="スライド3を表示">03</button>
-          </div>
-        </div>
-
-        <form class="tsukigi-search" action="./businesses.html" aria-label="地域情報検索">
-          <label for="hero-query">検索</label>
-          <input id="hero-query" name="q" type="search" placeholder="会員企業・お店・業種で探す" />
-          <input id="hero-category" name="category" type="hidden" value="" />
-          <button id="hero-search-button" type="submit">検索</button>
         </form>
-        <div class="category-shortcuts" role="tablist" aria-label="業種から探す">
-          <span>業種から絞る</span>
-          <button type="button" class="is-active" data-hero-category="" role="tab" aria-selected="true">すべて</button>
-          <button type="button" data-hero-category="飲食" role="tab" aria-selected="false">飲食</button>
-          <button type="button" data-hero-category="建設" role="tab" aria-selected="false">住まい・建設</button>
-          <button type="button" data-hero-category="美容" role="tab" aria-selected="false">美容</button>
-          <button type="button" data-hero-category="健康" role="tab" aria-selected="false">健康</button>
-          <button type="button" data-hero-category="サービス" role="tab" aria-selected="false">サービス</button>
-        </div>
       </section>
 
-      <section class="tsukigi-newsline" aria-labelledby="news-overview-title">
-        <h2 id="news-overview-title">NEWS</h2>
-        <ul class="simple-news-list">
-          <li><time datetime="2026-06-22">2026.06.22</time><a href="http://www.shinguumachi.or.jp/archives/1238" target="_blank" rel="noreferrer">事業承継・M&A補助金 公募説明会のお知らせ</a></li>
-          <li><time datetime="2026-06-19">2026.06.19</time><a href="http://www.shinguumachi.or.jp/archives/1218" target="_blank" rel="noreferrer">人権啓発セミナー開催のお知らせ</a></li>
-          <li><time datetime="2026-06-08">2026.06.08</time><a href="http://www.shinguumachi.or.jp/archives/1199" target="_blank" rel="noreferrer">勤労者知事表彰候補者の推薦について</a></li>
-        </ul>
+      <!-- ============ NEWS TICKER ============ -->
+      <section class="newsline" aria-labelledby="newsline-title">
+        <h2 id="newsline-title"><em>NEWS</em>お知らせ</h2>
+        <div class="newsline-track" id="newsline-track">
+          <ul>
+            <li><time datetime="2026-06-22">2026.06.22</time><a href="http://www.shinguumachi.or.jp/archives/1238" target="_blank" rel="noreferrer">事業承継・M&A補助金 公募説明会のお知らせ</a></li>
+            <li><time datetime="2026-06-19">2026.06.19</time><a href="http://www.shinguumachi.or.jp/archives/1218" target="_blank" rel="noreferrer">人権啓発セミナー開催のお知らせ</a></li>
+            <li><time datetime="2026-06-08">2026.06.08</time><a href="http://www.shinguumachi.or.jp/archives/1199" target="_blank" rel="noreferrer">勤労者知事表彰候補者の推薦について</a></li>
+          </ul>
+        </div>
+        <a class="newsline-more" href="#news">一覧へ<i aria-hidden="true">→</i></a>
       </section>
 
-      <section class="tsukigi-pickup" aria-labelledby="pickup-title">
-        <div class="pickup-photo">
-          <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=1200&q=82" alt="しんぐうベーカリーのイメージ写真">
-          <p><span>【2026】新宮の朝を</span><span>少し楽しくするベーカリー</span></p>
-        </div>
+      <!-- ============ PICK UP ============ -->
+      <section class="pickup" aria-labelledby="pickup-title">
+        <p class="pickup-vertical" data-reveal>新宮の仕事</p>
+        <figure class="pickup-photo" data-reveal>
+          <div class="photo-frame" data-parallax-img>
+            <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=1400&q=82" alt="しんぐうベーカリーのイメージ写真" />
+          </div>
+          <figcaption><span>【2026】新宮の朝を</span><span>少し楽しくするベーカリー</span></figcaption>
+        </figure>
         <div class="pickup-copy">
-          <p class="vertical-title" id="pickup-title">新宮の仕事</p>
-          <div>
-            <span>PICK UP</span>
-            <h2>まちで働く人の<wbr>想いを読む。</h2>
-            <p>お店や会社の背景を知ると、いつもの買い物や相談先が少し身近になります。</p>
-            <div class="pickup-card-list" aria-label="ピックアップ記事">
-              <a href="#features"><time>2026.07.08</time>休日の朝に立ち寄りたい、新宮のパン屋</a>
-              <a href="#interviews"><time>2026.07.18</time>地域で事業を続ける理由を聞く</a>
-              <a href="./businesses.html"><time>2026.07.24</time>目的から探せる会員企業一覧へ</a>
-            </div>
+          <p class="section-eyebrow" data-reveal><em>PICK UP</em>今月のおすすめ</p>
+          <h2 id="pickup-title" data-reveal>まちで働く人の、<br />想いを読む。</h2>
+          <p class="pickup-lead" data-reveal>お店や会社の背景を知ると、いつもの買い物や相談先が少し身近になります。</p>
+          <div class="pickup-list" data-reveal aria-label="ピックアップ記事">
+            <a href="#features"><time>2026.07.08</time><span>休日の朝に立ち寄りたい、新宮のパン屋</span><i aria-hidden="true">→</i></a>
+            <a href="#interviews"><time>2026.07.18</time><span>地域で事業を続ける理由を聞く</span><i aria-hidden="true">→</i></a>
+            <a href="./businesses.html"><time>2026.07.24</time><span>目的から探せる会員企業一覧へ</span><i aria-hidden="true">→</i></a>
           </div>
         </div>
       </section>
 
-      <section class="section portal-intro" aria-label="サイトの役割">
-        <article>
-          <span>読む</span>
-          <h2>お店や会社の想いを知る</h2>
-          <p>商品やサービスだけでは見えにくい、働く人のこだわりやまちへの想いを紹介します。</p>
-        </article>
-        <article>
-          <span>探す</span>
-          <h2>暮らしに合う相談先を探す</h2>
-          <p>飲食、住まい、美容、健康、サービスなど、暮らしや仕事に必要な町内事業者を見つけられます。</p>
-        </article>
-        <article>
-          <span>相談</span>
-          <h2>困ったときは<wbr>商工会へ相談</h2>
-          <p>創業、経営、販路づくり、お店のPRなど、事業の悩みを相談できる窓口につながります。</p>
-        </article>
+      <!-- ============ MARQUEE ============ -->
+      <div class="marquee" aria-hidden="true">
+        <div class="marquee-track">
+          <span>SHINGU LOCAL MEDIA<i>●</i>まちの仕事と暮らし<i>●</i>読む、探す、相談する<i>●</i></span
+          ><span>SHINGU LOCAL MEDIA<i>●</i>まちの仕事と暮らし<i>●</i>読む、探す、相談する<i>●</i></span>
+        </div>
+      </div>
+
+      <!-- ============ ROLES ============ -->
+      <section class="roles" aria-label="サイトの役割">
+        <a class="role-row" href="#features" data-reveal>
+          <span class="role-num">01</span>
+          <span class="role-kanji">読む</span>
+          <span class="role-body">
+            <strong>お店や会社の想いを知る</strong>
+            <small>商品やサービスだけでは見えにくい、働く人のこだわりやまちへの想いを紹介します。</small>
+          </span>
+          <span class="role-arrow" aria-hidden="true">→</span>
+        </a>
+        <a class="role-row" href="./businesses.html" data-reveal>
+          <span class="role-num">02</span>
+          <span class="role-kanji">探す</span>
+          <span class="role-body">
+            <strong>暮らしに合う相談先を探す</strong>
+            <small>飲食、住まい、美容、健康、サービスなど、暮らしや仕事に必要な町内事業者を見つけられます。</small>
+          </span>
+          <span class="role-arrow" aria-hidden="true">→</span>
+        </a>
+        <a class="role-row" href="#contact" data-reveal>
+          <span class="role-num">03</span>
+          <span class="role-kanji">相談</span>
+          <span class="role-body">
+            <strong>困ったときは商工会へ相談</strong>
+            <small>創業、経営、販路づくり、お店のPRなど、事業の悩みを相談できる窓口につながります。</small>
+          </span>
+          <span class="role-arrow" aria-hidden="true">→</span>
+        </a>
       </section>
 
-      <section id="support" class="section shokokai-functions" aria-labelledby="support-title">
-        <div class="function-heading">
-          <p>SHOKOKAI SERVICE</p>
-          <h2 id="support-title">商工会でできること</h2>
-          <span>経営の相談から、地域のお店・会社を知るきっかけまで。新宮町の仕事を身近につなぎます。</span>
+      <!-- ============ FEATURED STORIES ============ -->
+      <section id="features" class="features" aria-labelledby="features-title">
+        <div class="region-title" data-parallax="0.05">
+          <p data-reveal>福岡県糟屋郡新宮町</p>
+          <p data-reveal>新宮町で働く人と考える</p>
+          <h2 id="features-title" data-reveal data-split-lines>まちの仕事</h2>
         </div>
-        <div class="function-grid">
-          <a href="#contact">
-            <span>01</span>
-            <h3>経営相談</h3>
-            <p>資金繰り、販路、価格設定、広報など、日々の経営の悩みを相談できます。</p>
-          </a>
-          <a href="#contact">
-            <span>02</span>
-            <h3>創業支援</h3>
-            <p>開業前の準備、事業計画、届出など、地域で始めるための不安を一緒に整理します。</p>
-          </a>
-          <a href="#news">
-            <span>03</span>
-            <h3>補助金・支援情報</h3>
-            <p>国・県・町の支援制度や申請時期を、必要なタイミングで確認できます。</p>
-          </a>
-          <a href="./businesses.html">
-            <span>04</span>
-            <h3>会員企業紹介</h3>
-            <p>飲食、住まい、美容、健康、サービスなど、町内の会員企業を探せます。</p>
-          </a>
-          <a href="#apply">
-            <span>05</span>
-            <h3>お店・会社のPR相談</h3>
-            <p>お店紹介、インタビュー、商品・サービス紹介など、地域に知ってほしい内容を相談できます。</p>
-          </a>
-          <a id="join" href="#contact">
-            <span>06</span>
-            <h3>入会案内</h3>
-            <p>商工会への加入や青年部活動など、地域の事業者とつながるきっかけを案内します。</p>
-          </a>
-        </div>
-      </section>
 
-      <section id="features" class="section features-section" aria-labelledby="features-title">
-        <div class="region-title">
-          <p>福岡県糟屋郡新宮町</p>
-          <p>新宮町で働く人と考える</p>
-          <h2 id="features-title">まちの仕事</h2>
-        </div>
-        <article class="feature-lead-story">
-          <div class="lead-media">
-            <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=1300&q=82" alt="地域のお店で接客する事業者の様子">
-          </div>
-          <div>
-            <span>FEATURED STORY</span>
+        <article class="lead-story" data-reveal>
+          <a class="lead-media" href="#features" aria-hidden="true" tabindex="-1">
+            <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=1400&q=82" alt="地域のお店で接客する事業者の様子" />
+            <span class="lead-badge">FEATURED STORY</span>
+          </a>
+          <div class="lead-body">
             <h3>地域の仕事を、地域の人に届く言葉へ。</h3>
             <p>お店や会社の取り組みを知ることで、地元で買う・頼む・相談するきっかけが生まれます。</p>
             <footer class="article-actions">
               <small>新宮町商工会</small>
               <button class="like-button" type="button" data-like-id="featured-story-main" data-like-base="24" aria-label="この記事にいいねする" aria-pressed="false">
-                <span class="like-icon" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-                    <path d="M7 10v11H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3Zm2 11V9.4l4.2-6.1c.3-.5.9-.7 1.5-.5 1.1.3 1.7 1.4 1.5 2.5L15.6 9H20a2 2 0 0 1 2 2.3l-1.1 7A3.2 3.2 0 0 1 17.7 21H9Z" />
-                  </svg>
-                </span>
-                <span class="like-label" aria-hidden="true">いいね！</span>
+                <span class="like-icon" aria-hidden="true">♥</span>
+                <span class="like-label">いいね</span>
                 <strong>24</strong>
               </button>
             </footer>
           </div>
         </article>
-        <div class="section-heading split-heading subdued-heading">
+
+        <div class="section-heading" data-reveal>
           <div>
-            <p class="eyebrow">Featured Stories</p>
+            <p class="section-eyebrow"><em>FEATURED STORIES</em>特集記事</p>
             <h3>新宮の仕事と暮らしを読む</h3>
           </div>
           <p>お店のこだわり、地域の話題、暮らしに役立つ情報を、読みやすい記事で紹介します。</p>
         </div>
-        <div id="feature-list" class="feature-list"></div>
+        <div id="feature-list" class="feature-grid"></div>
       </section>
 
-      <section id="interviews" class="section interviews-section" aria-labelledby="interviews-title">
-        <div class="section-heading">
-          <p class="eyebrow">Business Interviews</p>
-          <h2 id="interviews-title">新宮で働く人に聞く</h2>
-          <p>どんな想いでお店や会社を続けているのか。地域で働く人の声を紹介します。</p>
-        </div>
-        <div id="interview-list" class="interview-list"></div>
-      </section>
-
-      <section id="businesses" class="section businesses-section" aria-labelledby="business-title">
-        <div class="section-heading split-heading">
-          <div>
-            <p class="eyebrow">Business Directory</p>
-            <h2 id="business-title">地域事業者を探す</h2>
+      <!-- ============ INTERVIEWS ============ -->
+      <section id="interviews" class="interviews" aria-labelledby="interviews-title">
+        <div class="interviews-head">
+          <p class="interviews-giant" data-parallax="-0.06" aria-hidden="true">VOICES</p>
+          <div class="section-heading inverted" data-reveal>
+            <div>
+              <p class="section-eyebrow"><em>BUSINESS INTERVIEWS</em>事業者の声</p>
+              <h2 id="interviews-title">新宮で働く人に聞く</h2>
+            </div>
+            <p>どんな想いでお店や会社を続けているのか。地域で働く人の声を紹介します。</p>
           </div>
-          <p>飲食、住まい、美容、健康、サービスなど、必要な内容から町内の会員企業を探せます。</p>
-        </div>
-        <div class="featured-directory">
-          <div>
-            <h3>地域の事業者検索ページへ</h3>
-            <p>業種やキーワードで絞り込み、気になるお店や会社の基本情報を確認できます。</p>
-            <a class="button primary" href="./businesses.html">事業者一覧を見る</a>
+          <div class="interviews-nav" data-reveal>
+            <button type="button" id="interviews-prev" aria-label="前のインタビューへ">←</button>
+            <button type="button" id="interviews-next" aria-label="次のインタビューへ">→</button>
           </div>
-          <div id="business-preview-list" class="business-list compact-list"></div>
+        </div>
+        <div class="interview-scroller" id="interview-list" tabindex="0" aria-label="インタビュー記事一覧"></div>
+      </section>
+
+      <!-- ============ DIRECTORY ============ -->
+      <section id="businesses" class="directory" aria-labelledby="directory-title">
+        <div class="directory-intro">
+          <p class="section-eyebrow" data-reveal><em>BUSINESS DIRECTORY</em>会員企業</p>
+          <h2 id="directory-title" data-reveal>地域事業者を探す</h2>
+          <p class="directory-count" data-reveal>
+            <strong data-count="640">0</strong>
+            <span>新宮町商工会の会員事業者<br />（2026年時点）</span>
+          </p>
+          <p data-reveal>飲食、住まい、美容、健康、サービスなど、必要な内容から町内の会員企業を探せます。業種やキーワードで絞り込み、気になるお店や会社の基本情報を確認できます。</p>
+          <a class="button-primary" href="./businesses.html" data-reveal><span>事業者一覧を見る</span><i aria-hidden="true">→</i></a>
+        </div>
+        <div id="business-preview-list" class="directory-preview"></div>
+      </section>
+
+      <!-- ============ SERVICES ============ -->
+      <section id="support" class="services" aria-labelledby="support-title">
+        <div class="section-heading" data-reveal>
+          <div>
+            <p class="section-eyebrow"><em>SHOKOKAI SERVICE</em>商工会の窓口</p>
+            <h2 id="support-title">商工会でできること</h2>
+          </div>
+          <p>経営の相談から、地域のお店・会社を知るきっかけまで。新宮町の仕事を身近につなぎます。</p>
+        </div>
+        <div class="service-grid">
+          <a href="#contact" data-reveal>
+            <span class="service-num">01</span>
+            <h3>経営相談</h3>
+            <p>資金繰り、販路、価格設定、広報など、日々の経営の悩みを相談できます。</p>
+            <i aria-hidden="true">→</i>
+          </a>
+          <a href="#contact" data-reveal>
+            <span class="service-num">02</span>
+            <h3>創業支援</h3>
+            <p>開業前の準備、事業計画、届出など、地域で始めるための不安を一緒に整理します。</p>
+            <i aria-hidden="true">→</i>
+          </a>
+          <a href="#news" data-reveal>
+            <span class="service-num">03</span>
+            <h3>補助金・支援情報</h3>
+            <p>国・県・町の支援制度や申請時期を、必要なタイミングで確認できます。</p>
+            <i aria-hidden="true">→</i>
+          </a>
+          <a href="./businesses.html" data-reveal>
+            <span class="service-num">04</span>
+            <h3>会員企業紹介</h3>
+            <p>飲食、住まい、美容、健康、サービスなど、町内の会員企業を探せます。</p>
+            <i aria-hidden="true">→</i>
+          </a>
+          <a href="#apply" data-reveal>
+            <span class="service-num">05</span>
+            <h3>お店・会社のPR相談</h3>
+            <p>お店紹介、インタビュー、商品・サービス紹介など、地域に知ってほしい内容を相談できます。</p>
+            <i aria-hidden="true">→</i>
+          </a>
+          <a id="join" href="#contact" data-reveal>
+            <span class="service-num">06</span>
+            <h3>入会案内</h3>
+            <p>商工会への加入や青年部活動など、地域の事業者とつながるきっかけを案内します。</p>
+            <i aria-hidden="true">→</i>
+          </a>
         </div>
       </section>
 
-      <section class="section discovery-section" aria-labelledby="discovery-title">
-        <div class="section-heading">
-          <p class="eyebrow">Recommended</p>
-          <h2 id="discovery-title">おすすめの見つけ方</h2>
-          <p>ピックアップ記事や特集から、まだ知らなかった地元のお店・会社に出会えます。</p>
-        </div>
-        <div id="ad-slot-grid" class="ad-slot-grid"></div>
-      </section>
-
-      <section id="about" class="section about-section" aria-labelledby="about-title">
-        <div class="section-heading">
-          <p class="eyebrow">About Shokokai</p>
-          <h2 id="about-title">商工会を、もっと<wbr>身近な相談先へ</h2>
-          <p>
+      <!-- ============ ABOUT ============ -->
+      <section id="about" class="about" aria-labelledby="about-title">
+        <div class="about-lead">
+          <p class="section-eyebrow" data-reveal><em>ABOUT SHOKOKAI</em>新宮町商工会について</p>
+          <h2 id="about-title" data-reveal>商工会を、もっと<br />身近な相談先へ。</h2>
+          <p data-reveal>
             新宮町商工会は、昭和36年6月に設立された地域の商工業者を支える団体です。経営改善、創業・経営革新、専門家派遣、まちづくり事業などを通じて、新宮町の仕事と暮らしを支えています。
           </p>
+          <div class="about-stats" data-reveal>
+            <div><strong data-count="1961">0</strong><span>昭和36年（1961年）設立</span></div>
+            <div><strong data-count="640">0</strong><span>会員事業者数</span></div>
+            <div><strong data-count="65">0</strong><span>地域とともに歩んだ年数</span></div>
+          </div>
         </div>
         <div class="about-grid">
-          <article>
+          <article data-reveal>
             <h3>事業者を支える</h3>
             <p>経営、創業、補助金、販路、PRなど、地域で事業を続けるための相談を受けています。</p>
           </article>
-          <article>
+          <article data-reveal>
             <h3>地域とつなぐ</h3>
             <p>地元のお店や会社を知るきっかけを増やし、まちの中で買う・頼む・出会う流れを育てます。</p>
           </article>
-          <article>
+          <article data-reveal>
             <h3>まちの魅力を発信する</h3>
             <p>地域産業おこしや広報活動を通じて、新宮町の仕事、商品、人の魅力を紹介します。</p>
           </article>
         </div>
-        <div class="existing-links" aria-label="商工会について調べる">
+        <div class="about-links" data-reveal aria-label="商工会について調べる">
           <a href="http://www.shinguumachi.or.jp/info" target="_blank" rel="noreferrer">商工会とは</a>
           <a href="http://www.shinguumachi.or.jp/service" target="_blank" rel="noreferrer">商工会案内</a>
           <a href="http://www.shinguumachi.or.jp/about" target="_blank" rel="noreferrer">商工会概要</a>
@@ -283,66 +361,85 @@
         </div>
       </section>
 
-      <section id="contact" class="section contact-section" aria-labelledby="contact-title">
-        <div>
-          <p class="eyebrow">Access / Contact</p>
-          <h2 id="contact-title">相談・問い合わせ窓口</h2>
-          <p>資金繰りや販路づくりなどの経営相談、創業準備、商工会への入会、お店・会社のPR相談まで、まずは新宮町商工会へご相談ください。</p>
-        </div>
-        <dl class="contact-list">
-          <div><dt>団体名</dt><dd>新宮町商工会</dd></div>
-          <div><dt>所在地</dt><dd>〒811-0112 福岡県糟屋郡新宮町下府3-17-1</dd></div>
-          <div><dt>電話</dt><dd><a href="tel:0929634567">092-963-4567</a></dd></div>
-          <div><dt>FAX</dt><dd>092-962-4355</dd></div>
-          <div><dt>メール</dt><dd><a href="mailto:shingu@shokokai.ne.jp">shingu@shokokai.ne.jp</a></dd></div>
-          <div><dt>設立</dt><dd>昭和36年6月</dd></div>
-          <div><dt>会員数</dt><dd>640</dd></div>
-        </dl>
-        <div class="contact-actions">
-          <a href="http://www.shinguumachi.or.jp/about" target="_blank" rel="noreferrer">アクセスを見る</a>
-          <a href="mailto:shingu@shokokai.ne.jp">商工会へ相談する</a>
-        </div>
-      </section>
-
-      <section id="news" class="section news-section" aria-labelledby="news-title">
-        <div class="section-heading">
-          <p class="eyebrow">News</p>
-          <h2 id="news-title">商工会からのお知らせ</h2>
+      <!-- ============ NEWS ============ -->
+      <section id="news" class="news" aria-labelledby="news-title">
+        <div class="section-heading" data-reveal>
+          <div>
+            <p class="section-eyebrow"><em>NEWS</em>お知らせ</p>
+            <h2 id="news-title">商工会からのお知らせ</h2>
+          </div>
         </div>
         <div class="news-list">
-          <article>
+          <a href="http://www.shinguumachi.or.jp/archives/1238" target="_blank" rel="noreferrer" data-reveal>
             <time datetime="2026-06-22">2026.06.22</time>
-            <h3><a href="http://www.shinguumachi.or.jp/archives/1238" target="_blank" rel="noreferrer">事業承継・M&A補助金 公募説明会のお知らせ</a></h3>
-          </article>
-          <article>
+            <span class="news-tag">補助金</span>
+            <h3>事業承継・M&A補助金 公募説明会のお知らせ</h3>
+            <i aria-hidden="true">→</i>
+          </a>
+          <a href="http://www.shinguumachi.or.jp/archives/1218" target="_blank" rel="noreferrer" data-reveal>
             <time datetime="2026-06-19">2026.06.19</time>
-            <h3><a href="http://www.shinguumachi.or.jp/archives/1218" target="_blank" rel="noreferrer">人権啓発セミナー開催のお知らせ</a></h3>
-          </article>
-          <article>
+            <span class="news-tag">セミナー</span>
+            <h3>人権啓発セミナー開催のお知らせ</h3>
+            <i aria-hidden="true">→</i>
+          </a>
+          <a href="http://www.shinguumachi.or.jp/archives/1199" target="_blank" rel="noreferrer" data-reveal>
             <time datetime="2026-06-08">2026.06.08</time>
-            <h3><a href="http://www.shinguumachi.or.jp/archives/1199" target="_blank" rel="noreferrer">勤労者知事表彰候補者の推薦について</a></h3>
-          </article>
+            <span class="news-tag">推薦</span>
+            <h3>勤労者知事表彰候補者の推薦について</h3>
+            <i aria-hidden="true">→</i>
+          </a>
         </div>
       </section>
 
-      <section id="apply" class="section apply-section" aria-labelledby="apply-title">
-        <div>
-          <p class="eyebrow">For Local Businesses</p>
-          <h2 id="apply-title">地元企業の魅力を、地域へ届けませんか</h2>
-          <p>
-            お店紹介、経営者インタビュー、商品・サービス紹介など、地域の人に知ってほしい内容を相談できます。
-          </p>
+      <!-- ============ CONTACT / APPLY ============ -->
+      <section id="contact" class="contact" aria-labelledby="contact-title">
+        <div class="contact-info">
+          <p class="section-eyebrow" data-reveal><em>ACCESS / CONTACT</em>相談窓口</p>
+          <h2 id="contact-title" data-reveal>相談・問い合わせ窓口</h2>
+          <p data-reveal>資金繰りや販路づくりなどの経営相談、創業準備、商工会への入会、お店・会社のPR相談まで、まずは新宮町商工会へご相談ください。</p>
+          <dl class="contact-list" data-reveal>
+            <div><dt>団体名</dt><dd>新宮町商工会</dd></div>
+            <div><dt>所在地</dt><dd>〒811-0112 福岡県糟屋郡新宮町下府3-17-1</dd></div>
+            <div><dt>電話</dt><dd><a href="tel:0929634567">092-963-4567</a></dd></div>
+            <div><dt>FAX</dt><dd>092-962-4355</dd></div>
+            <div><dt>メール</dt><dd><a href="mailto:shingu@shokokai.ne.jp">shingu@shokokai.ne.jp</a></dd></div>
+            <div><dt>設立</dt><dd>昭和36年6月</dd></div>
+            <div><dt>会員数</dt><dd>640</dd></div>
+          </dl>
+          <div class="contact-actions" data-reveal>
+            <a class="button-ghost" href="http://www.shinguumachi.or.jp/about" target="_blank" rel="noreferrer"><span>アクセスを見る</span><i aria-hidden="true">↗</i></a>
+            <a class="button-primary" href="mailto:shingu@shokokai.ne.jp"><span>商工会へ相談する</span><i aria-hidden="true">→</i></a>
+          </div>
         </div>
-        <a class="button primary" href="https://forms.google.com" target="_blank" rel="noreferrer">PRについて相談する</a>
+        <aside id="apply" class="apply-panel" data-reveal>
+          <p class="section-eyebrow inverted-eyebrow"><em>FOR LOCAL BUSINESSES</em>掲載のご案内</p>
+          <h2>地元企業の魅力を、<br />地域へ届けませんか。</h2>
+          <p>お店紹介、経営者インタビュー、商品・サービス紹介など、地域の人に知ってほしい内容を相談できます。</p>
+          <a class="button-light" href="https://forms.google.com" target="_blank" rel="noreferrer"><span>PRについて相談する</span><i aria-hidden="true">↗</i></a>
+          <a class="apply-plans" href="./plans.html">掲載プランを見る<i aria-hidden="true">→</i></a>
+        </aside>
       </section>
     </main>
 
     <footer class="site-footer">
-      <p>新宮町商工会｜まちの仕事と暮らし</p>
-      <p>新宮町のお店・会社・人を知る地域メディア</p>
+      <div class="footer-giant" aria-hidden="true"><span>SHINGU LOCAL MEDIA</span></div>
+      <div class="footer-inner">
+        <div>
+          <p class="footer-brand"><span class="brand-mark">新</span>新宮町商工会｜まちの仕事と暮らし</p>
+          <p class="footer-note">新宮町のお店・会社・人を知る地域メディア</p>
+        </div>
+        <nav class="footer-nav" aria-label="フッターナビゲーション">
+          <a href="#features">地域記事</a>
+          <a href="#interviews">事業者の声</a>
+          <a href="./businesses.html">会員企業一覧</a>
+          <a href="./plans.html">掲載プラン</a>
+          <a href="#contact">相談窓口</a>
+        </nav>
+      </div>
+      <p class="footer-copy">© 新宮町商工会</p>
     </footer>
 
-    <script src="./data.js?v=20260706-copy1"></script>
-    <script src="./app.js?v=20260707-copyfix1"></script>
+    <script src="./data.js?v=20260707-plan10-1"></script>
+    <script src="./home.js?v=20260707-brushup1"></script>
   </body>
 </html>

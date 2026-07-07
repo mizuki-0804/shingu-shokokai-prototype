@@ -31,7 +31,7 @@ const memberCompanyPlaceholders = [
   name,
   category,
   area,
-  plan: "基本情報",
+  plan: "掲載準備中",
   planRank: 5,
   detailPage: false,
   catchcopy,
@@ -63,7 +63,7 @@ window.SHINGU_DATA = {
       name: "しんぐうベーカリー",
       category: "飲食",
       area: "新宮町中央",
-      plan: "詳しい紹介あり",
+      plan: "10万円プラン",
       planRank: 1,
       detailPage: true,
       catchcopy: "朝から焼きたてパンを楽しめる地域のベーカリー",
@@ -89,7 +89,6 @@ window.SHINGU_DATA = {
         "https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=1200&q=80",
         "https://images.unsplash.com/photo-1506459225024-1428097a7e18?auto=format&fit=crop&w=1200&q=80"
       ],
-      video: "https://www.youtube.com/embed/dQw4w9WgXcQ",
       examples: ["季節のフルーツデニッシュ", "地元野菜の惣菜パン", "朝食セット"],
       cases: [
         {
@@ -107,13 +106,13 @@ window.SHINGU_DATA = {
       name: "新宮住まい工務店",
       category: "建設",
       area: "三代",
-      plan: "おすすめ",
-      planRank: 2,
-      detailPage: false,
+      plan: "10万円プラン",
+      planRank: 1.5,
+      detailPage: true,
       catchcopy: "新築・リフォーム・修繕まで相談しやすい町の工務店",
       description:
-        "住まいの小さな修繕からリフォーム、新築相談まで対応。地域の気候や暮らしに合わせた提案を大切にしています。",
-      tags: ["施工事例あり", "法人対応", "見積相談"],
+        "新宮町で住まいの小さな修繕から店舗内装、リフォーム相談まで対応する地域密着の工務店。現地確認から見積もり、施工後の相談まで、顔の見える距離感を大切にしています。",
+      tags: ["10万円プラン", "施工事例あり", "法人対応", "見積相談"],
       phone: "092-000-1111",
       email: "info@shingu-builder.example",
       address: "福岡県糟屋郡新宮町三代2-2-2",
@@ -125,15 +124,37 @@ window.SHINGU_DATA = {
       payment: ["振込"],
       image:
         "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=900&q=80",
-      examples: ["水回りリフォーム", "店舗内装", "外壁修繕"]
+      gallery: [
+        "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80",
+        "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1200&q=80",
+        "https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=1200&q=80",
+        "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1200&q=80",
+        "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1200&q=80",
+        "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=80"
+      ],
+      examples: ["水回りリフォーム", "店舗内装", "外壁修繕"],
+      cases: [
+        {
+          title: "水回りの小さな修繕相談",
+          text: "毎日使う場所だからこそ、気になる不具合を早めに相談できる体制を整えています。現地確認後、必要な工事範囲を分かりやすく説明します。"
+        },
+        {
+          title: "店舗内装の部分改修",
+          text: "営業を続けながら進めたい改修や、限られた予算で印象を変えたい相談にも対応。動線や見せ方を一緒に確認します。"
+        },
+        {
+          title: "外壁・雨まわりの点検",
+          text: "台風や雨の季節に備え、外壁や雨どいまわりの確認も相談できます。地域の気候を踏まえた提案を大切にしています。"
+        }
+      ]
     },
     {
       id: "minato-seikotsu",
       name: "みなと整骨院",
       category: "健康",
       area: "下府",
-      plan: "基本情報",
-      planRank: 3,
+      plan: "5万円プラン",
+      planRank: 2,
       detailPage: false,
       catchcopy: "仕事帰りにも通いやすい予約対応の整骨院",
       description:
@@ -157,7 +178,7 @@ window.SHINGU_DATA = {
       name: "さくら美容室",
       category: "美容",
       area: "美咲",
-      plan: "基本情報",
+      plan: "3万円プラン",
       planRank: 3,
       detailPage: false,
       catchcopy: "家族で通える、落ち着いた雰囲気の美容室",
@@ -182,7 +203,7 @@ window.SHINGU_DATA = {
       name: "まちの電器店",
       category: "小売",
       area: "夜臼",
-      plan: "基本情報",
+      plan: "1万円プラン",
       planRank: 4,
       detailPage: false,
       catchcopy: "家電の購入から設置、ちょっとした相談まで",
@@ -207,7 +228,7 @@ window.SHINGU_DATA = {
       name: "新宮デザイン印刷",
       category: "サービス",
       area: "緑ケ浜",
-      plan: "基本情報",
+      plan: "1万円プラン",
       planRank: 4,
       detailPage: false,
       catchcopy: "チラシ、名刺、ポスター制作を相談できる印刷サービス",
