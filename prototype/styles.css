@@ -3047,7 +3047,7 @@ h3,
 .pickup-copy h2,
 .home-page .portal-intro h2 {
   font-family: "Hiragino Sans", "Yu Gothic", "YuGothic", Meiryo, -apple-system, BlinkMacSystemFont, sans-serif !important;
-  font-weight: 900;
+  font-weight: 800;
   letter-spacing: 0;
 }
 
@@ -3064,6 +3064,34 @@ h3,
 .feature-lead-story h3 {
   font-size: clamp(24px, 2.4vw, 34px);
   line-height: 1.32;
+}
+
+.site-nav a,
+.visual-link-panels a,
+.category-shortcuts button,
+.filter-shortcuts button,
+.tsukigi-search button,
+.card-links a,
+.card-note,
+.contact-actions a,
+.button,
+.like-button {
+  font-weight: 700;
+}
+
+.brand strong,
+.page-hero h1,
+.section-heading h2,
+.section-heading h3,
+.business-card h3,
+.ad-card h3,
+.feature-card h3,
+.article-card h3,
+.interview-card h3,
+.news-list h3,
+.function-grid h3,
+.home-page .portal-intro h2 {
+  font-weight: 800;
 }
 
 .empty {
