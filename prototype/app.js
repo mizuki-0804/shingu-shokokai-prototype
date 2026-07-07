@@ -528,6 +528,16 @@ function renderDetailPage() {
     return;
   }
 
+  const mediaBlock = business.video
+    ? `<div class="video-frame">
+        <iframe src="${business.video}" title="${business.name} 紹介動画" allowfullscreen loading="lazy"></iframe>
+      </div>`
+    : `<div class="video-frame video-frame-placeholder">
+        <p class="eyebrow">Interview Note</p>
+        <h2>取材記事として読める紹介枠</h2>
+        <p>写真、事例、相談できる内容をまとめ、初めて見る人にも事業内容が伝わる構成にしています。</p>
+      </div>`;
+
   detail.innerHTML = `
     <section class="detail-hero">
       <img src="${business.image}" alt="${business.name}のメイン写真">
@@ -573,9 +583,7 @@ function renderDetailPage() {
       </div>
     </section>
     <section class="section video-case-section">
-      <div class="video-frame">
-        <iframe src="${business.video}" title="${business.name} 紹介動画" allowfullscreen loading="lazy"></iframe>
-      </div>
+      ${mediaBlock}
       <div>
         <p class="eyebrow">Works / Products</p>
         <h2>施工事例・商品紹介</h2>
