@@ -2351,47 +2351,76 @@ select {
 
 .like-button {
   display: inline-flex;
-  min-height: 36px;
+  min-height: 34px;
   align-items: center;
-  gap: 8px;
-  padding: 7px 12px;
-  border: 2px solid #000;
+  gap: 6px;
+  padding: 6px 11px;
+  border: 1px solid #d8dde6;
   border-radius: 999px;
-  color: #000;
-  background: #fff;
-  box-shadow: 3px 3px 0 #000;
+  color: #4b5563;
+  background: #f5f6f7;
+  box-shadow: none;
   cursor: pointer;
   font: inherit;
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 900;
   line-height: 1;
-  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+  transition: border-color 0.2s ease, background 0.2s ease, color 0.2s ease, transform 0.2s ease;
 }
 
-.like-button span {
-  color: var(--green);
-  font-family: Georgia, "Times New Roman", serif;
-  letter-spacing: 0.12em;
+.like-button .like-icon {
+  display: inline-flex;
+  width: 18px;
+  height: 18px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  color: #fff;
+  background: #1877f2;
+  font-size: 11px;
+  line-height: 1;
+}
+
+.like-button .like-label {
+  letter-spacing: 0;
 }
 
 .like-button strong {
   min-width: 2ch;
-  font-size: 14px;
+  padding-left: 4px;
+  border-left: 1px solid rgba(75, 85, 99, 0.26);
+  font-size: 13px;
 }
 
-.like-button:hover,
-.like-button.is-liked {
-  background: var(--accent);
-  box-shadow: 1px 1px 0 #000;
-  transform: translate(2px, 2px);
+.like-button:hover {
+  border-color: #c8d4e8;
+  color: #1877f2;
+  background: #eef4ff;
+  transform: translateY(-1px);
+}
+
+button.like-button.is-liked,
+button.like-button.is-liked:disabled {
+  border-color: #1877f2;
+  color: #fff;
+  background: #1877f2;
+  transform: none;
+  opacity: 1;
+  -webkit-text-fill-color: #fff;
 }
 
 .like-button:disabled {
   cursor: default;
 }
 
-.like-button.is-liked span {
-  color: #000;
+button.like-button.is-liked .like-icon {
+  color: #1877f2;
+  background: #fff;
+  -webkit-text-fill-color: #1877f2;
+}
+
+button.like-button.is-liked strong {
+  border-left-color: rgba(255, 255, 255, 0.38);
 }
 
 .section-more {

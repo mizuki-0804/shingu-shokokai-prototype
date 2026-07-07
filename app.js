@@ -58,7 +58,8 @@ function likeButton(id, baseCount = 0) {
   const record = likeRecord(likes, id, baseCount);
   return `
     <button class="like-button ${record.liked ? "is-liked" : ""}" type="button" data-like-id="${id}" data-like-base="${baseCount}" aria-label="この記事にいいねする" aria-pressed="${record.liked ? "true" : "false"}" ${record.liked ? "disabled" : ""}>
-      <span aria-hidden="true">${record.liked ? "LIKED" : "LIKE"}</span>
+      <span class="like-icon" aria-hidden="true">👍</span>
+      <span class="like-label" aria-hidden="true">いいね！</span>
       <strong>${record.count}</strong>
     </button>
   `;
@@ -721,7 +722,6 @@ function setupArticleLikes() {
     const base = Number(button.dataset.likeBase || 0);
     const record = likeRecord(likes, id, base);
     button.querySelector("strong").textContent = String(record.count);
-    button.querySelector("span").textContent = record.liked ? "LIKED" : "LIKE";
     button.classList.toggle("is-liked", record.liked);
     button.disabled = record.liked;
     button.setAttribute("aria-pressed", record.liked ? "true" : "false");
@@ -739,7 +739,6 @@ function setupArticleLikes() {
     likes[id] = { count: next, liked: true };
     writeLikes(likes);
     button.querySelector("strong").textContent = String(next);
-    button.querySelector("span").textContent = "LIKED";
     button.classList.add("is-liked");
     button.disabled = true;
     button.setAttribute("aria-pressed", "true");
