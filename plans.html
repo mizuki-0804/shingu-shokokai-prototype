@@ -6,30 +6,49 @@
     <title>掲載プランのご案内 | 新宮町商工会</title>
     <meta name="description" content="新宮町商工会ホームページの会員企業掲載プラン。1万円・3万円・5万円・10万円プランの掲載内容の違いをご案内します。" />
     <meta name="robots" content="noindex, nofollow, noarchive" />
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='48' fill='%23000'/><text x='50' y='68' font-size='52' text-anchor='middle' fill='%23fff'>新</text></svg>" />
-    <link rel="stylesheet" href="./styles.css?v=20260707-plans1" />
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='48' fill='%231d4f7e'/><text x='50' y='68' font-size='52' text-anchor='middle' fill='%23f7f5ef'>新</text></svg>" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@700;900&family=Space+Grotesk:wght@400;500;600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./home.css?v=20260708-demo2" />
+    <link rel="stylesheet" href="./article.css?v=20260708-demo1" />
+    <link rel="stylesheet" href="./plans.css?v=20260708-demo1" />
   </head>
-  <body>
-    <header class="site-header">
-      <a class="brand" href="./index.html" aria-label="トップへ">
+  <body class="home subpage">
+    <div class="page-progress" aria-hidden="true"><i></i></div>
+
+    <header class="site-header is-scrolled" id="site-header">
+      <a class="brand" href="./index.html" aria-label="新宮町商工会 トップへ">
         <span class="brand-mark">新</span>
-        <span>
-          <strong>新宮町商工会</strong>
-          <small>掲載プラン</small>
-        </span>
+        <span class="brand-text"><strong>新宮町商工会</strong><small>SHINGU LOCAL MEDIA</small></span>
       </a>
       <nav class="site-nav" aria-label="主要ナビゲーション">
-        <a href="./index.html#features">特集</a>
-        <a href="./index.html#interviews">インタビュー</a>
-        <a href="./businesses.html">会員企業一覧</a>
+        <a href="./index.html#features">地域記事</a>
+        <a href="./index.html#interviews">事業者の声</a>
+        <a href="./businesses.html">会員企業</a>
         <a href="./plans.html">掲載プラン</a>
         <a href="./index.html#news">お知らせ</a>
-        <a class="nav-cta" href="./index.html#about">商工会とは</a>
       </nav>
+      <a class="header-cta" href="./index.html#contact"><span>相談する</span></a>
+      <button class="menu-toggle" id="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="メニューを開く"><i></i><i></i></button>
     </header>
 
-    <main>
-      <section class="page-hero compact-page-hero">
+    <nav class="mobile-menu" id="mobile-menu" aria-label="モバイルメニュー" hidden>
+      <a href="./index.html#features">地域記事</a>
+      <a href="./index.html#interviews">事業者の声</a>
+      <a href="./businesses.html">会員企業一覧</a>
+      <a href="./plans.html">掲載プラン</a>
+      <a href="./index.html#news">お知らせ</a>
+      <a class="mobile-menu-cta" href="./index.html#contact">商工会に相談する</a>
+    </nav>
+
+    <main id="top">
+      <nav class="breadcrumb" aria-label="パンくず">
+        <a href="./index.html">トップ</a><span>/</span>
+        <b>掲載プラン</b>
+      </nav>
+
+      <section class="plans-hero">
         <p class="eyebrow">For Members</p>
         <h1>掲載プランのご案内</h1>
         <p>会員企業の皆さまに、町民へ自社を知ってもらうための掲載枠をご用意しました。予算に合わせて4つのプランから選べます。</p>
@@ -236,11 +255,49 @@
           <li>各プランは募集社数に達し次第、締め切りとなります。</li>
         </ul>
       </section>
+      <div class="plans-spacer"></div>
     </main>
 
     <footer class="site-footer">
-      <p>新宮町商工会｜まちの仕事と暮らし</p>
-      <p><a href="./index.html">トップへ戻る</a></p>
+      <div class="footer-giant" aria-hidden="true"><span>SHINGU LOCAL MEDIA</span></div>
+      <div class="footer-inner">
+        <div>
+          <p class="footer-brand"><span class="brand-mark">新</span>新宮町商工会｜まちの仕事と暮らし</p>
+          <p class="footer-note">新宮町のお店・会社・人を知る地域メディア</p>
+        </div>
+        <nav class="footer-nav" aria-label="フッターナビゲーション">
+          <a href="./index.html#features">地域記事</a>
+          <a href="./index.html#interviews">事業者の声</a>
+          <a href="./businesses.html">会員企業一覧</a>
+          <a href="./plans.html">掲載プラン</a>
+          <a href="./index.html#contact">相談窓口</a>
+        </nav>
+      </div>
+      <p class="footer-copy">© 新宮町商工会</p>
     </footer>
+
+    <script>
+      (function () {
+        var t = document.getElementById("menu-toggle");
+        var m = document.getElementById("mobile-menu");
+        if (!t || !m) return;
+        function close() {
+          t.setAttribute("aria-expanded", "false");
+          m.classList.remove("is-open");
+          document.body.classList.remove("is-locked");
+          setTimeout(function () { m.setAttribute("hidden", ""); }, 400);
+        }
+        t.addEventListener("click", function () {
+          if (t.getAttribute("aria-expanded") === "true") { close(); return; }
+          m.removeAttribute("hidden");
+          requestAnimationFrame(function () { m.classList.add("is-open"); });
+          t.setAttribute("aria-expanded", "true");
+          document.body.classList.add("is-locked");
+        });
+        Array.prototype.forEach.call(m.querySelectorAll("a"), function (a) {
+          a.addEventListener("click", close);
+        });
+      })();
+    </script>
   </body>
 </html>

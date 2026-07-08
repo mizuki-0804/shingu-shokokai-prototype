@@ -1,0 +1,324 @@
+/* ============================================================
+   掲載プランページ 専用スタイル（home.css のトークンを継承）
+   ============================================================ */
+
+.subpage main { padding-top: var(--header-h); }
+
+.section {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: clamp(40px, 6vh, 76px) var(--gutter) 0;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-en);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.24em;
+  color: var(--blue);
+  text-transform: uppercase;
+}
+
+.section-heading h2 {
+  font-family: var(--font-display);
+  font-size: clamp(24px, 3.8vw, 36px);
+  font-weight: 900;
+  letter-spacing: 0.04em;
+  margin-top: 8px;
+}
+
+/* ---- ヒーロー ---- */
+.plans-hero {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: clamp(20px, 4vh, 40px) var(--gutter) 0;
+}
+.plans-hero h1 {
+  margin-top: 14px;
+  font-family: var(--font-display);
+  font-size: clamp(30px, 5vw, 54px);
+  font-weight: 900;
+  line-height: 1.35;
+  letter-spacing: 0.03em;
+}
+.plans-hero p {
+  margin-top: 16px;
+  font-size: 15px;
+  line-height: 2;
+  color: var(--muted);
+  max-width: 640px;
+}
+
+/* ============================================================
+   プランカード
+   ============================================================ */
+.plan-grid {
+  display: grid;
+  gap: clamp(16px, 2vw, 22px);
+  margin-top: 8px;
+}
+@media (min-width: 620px) { .plan-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1000px) { .plan-grid { grid-template-columns: repeat(4, 1fr); } }
+
+.plan-card {
+  position: relative;
+  display: grid;
+  align-content: start;
+  gap: 12px;
+  background: var(--surface);
+  border: 1px solid var(--line-strong);
+  padding: clamp(22px, 2.4vw, 30px) clamp(20px, 2vw, 26px);
+  transition: transform 0.4s var(--ease-out), box-shadow 0.4s;
+}
+.plan-card:hover { transform: translateY(-4px); box-shadow: 0 22px 44px -28px rgba(24,34,26,.45); }
+
+.plan-card-badge {
+  justify-self: start;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  padding: 5px 13px;
+  border-radius: 999px;
+  background: var(--paper-deep);
+  color: var(--muted);
+}
+.plan-card-price {
+  font-family: var(--font-en);
+  font-weight: 600;
+  font-size: clamp(30px, 4vw, 40px);
+  line-height: 1.1;
+  color: var(--ink);
+}
+.plan-card-price span {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--muted);
+  margin-left: 4px;
+}
+.plan-card-slots {
+  font-size: 12.5px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--vermilion);
+}
+.plan-card ul {
+  display: grid;
+  gap: 9px;
+  margin: 6px 0 0;
+  padding: 14px 0 0;
+  border-top: 1px solid var(--line);
+  list-style: none;
+}
+.plan-card li {
+  position: relative;
+  padding-left: 22px;
+  font-size: 13px;
+  line-height: 1.7;
+  color: #43403a;
+}
+.plan-card li::before {
+  content: "";
+  position: absolute;
+  left: 2px;
+  top: 0.62em;
+  width: 7px;
+  height: 7px;
+  background: var(--blue);
+  transform: rotate(45deg);
+}
+.plan-card-note {
+  margin-top: 4px;
+  padding-top: 12px;
+  border-top: 1px solid var(--line);
+  font-size: 12px;
+  color: var(--muted);
+}
+
+/* 上位プランの強調 */
+.plan-card-10 {
+  border-color: var(--blue);
+  border-width: 2px;
+}
+.plan-card-10::before {
+  content: "RECOMMENDED";
+  position: absolute;
+  top: -1px;
+  right: 16px;
+  transform: translateY(-50%);
+  background: var(--gold);
+  color: var(--ink);
+  font-family: var(--font-en);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  padding: 4px 12px;
+}
+.plan-card-10 .plan-card-badge { background: var(--blue); color: #fff; }
+.plan-card-5 .plan-card-badge { background: color-mix(in srgb, var(--blue) 16%, var(--paper)); color: var(--blue); }
+
+/* ============================================================
+   比較表
+   ============================================================ */
+.plan-table-wrap {
+  margin-top: 8px;
+  overflow-x: auto;
+  border: 1px solid var(--line-strong);
+}
+.plan-table {
+  width: 100%;
+  min-width: 640px;
+  border-collapse: collapse;
+  font-size: 13.5px;
+}
+.plan-table th,
+.plan-table td {
+  padding: 14px 16px;
+  text-align: center;
+  border-bottom: 1px solid var(--line);
+  border-right: 1px solid var(--line);
+}
+.plan-table thead th {
+  background: var(--ink);
+  color: var(--paper);
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  position: sticky;
+  top: 0;
+}
+.plan-table thead th.col-10 { background: var(--blue); }
+.plan-table thead th.col-5 { background: color-mix(in srgb, var(--blue) 78%, #000); }
+.plan-table tbody th[scope="row"] {
+  text-align: left;
+  background: var(--paper-deep);
+  font-weight: 700;
+  color: var(--ink);
+  white-space: nowrap;
+}
+.plan-table td.col-10 { background: color-mix(in srgb, var(--blue) 8%, var(--surface)); font-weight: 700; color: var(--blue); }
+.plan-table td.col-5 { background: color-mix(in srgb, var(--blue) 4%, var(--surface)); }
+.plan-table tbody tr:last-child th,
+.plan-table tbody tr:last-child td { border-bottom: 0; }
+.plan-table th:last-child,
+.plan-table td:last-child { border-right: 0; }
+
+.plan-example-link {
+  margin-top: 18px;
+  font-size: 13.5px;
+  color: var(--muted);
+  line-height: 1.9;
+}
+.plan-example-link a {
+  color: var(--blue);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* ============================================================
+   掲載までの流れ
+   ============================================================ */
+.plan-flow {
+  display: grid;
+  gap: 16px;
+  margin: 8px 0 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: flow;
+}
+@media (min-width: 760px) { .plan-flow { grid-template-columns: repeat(4, 1fr); } }
+.plan-flow li {
+  counter-increment: flow;
+  position: relative;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-top: 3px solid var(--blue);
+  padding: 22px;
+  display: grid;
+  gap: 8px;
+  align-content: start;
+}
+.plan-flow li::before {
+  content: counter(flow, decimal-leading-zero);
+  font-family: var(--font-en);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: var(--gold);
+}
+.plan-flow strong {
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+}
+.plan-flow p { font-size: 12.5px; line-height: 1.85; color: var(--muted); }
+
+/* ---- CTA ---- */
+.plan-cta {
+  margin-top: clamp(32px, 5vh, 52px);
+  background: var(--blue-dark);
+  color: var(--paper);
+  padding: clamp(32px, 5vw, 52px);
+  display: grid;
+  gap: 18px;
+  justify-items: center;
+  text-align: center;
+}
+.plan-cta > p {
+  font-family: var(--font-display);
+  font-size: clamp(19px, 2.6vw, 24px);
+  font-weight: 900;
+  letter-spacing: 0.04em;
+}
+.plan-cta-actions { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
+.plan-cta-button {
+  background: var(--gold);
+  color: var(--ink);
+  padding: 15px 28px;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  transition: transform 0.3s var(--ease-out), background 0.3s;
+}
+.plan-cta-button[aria-disabled="true"] { opacity: 0.7; cursor: default; }
+.plan-cta-button:not([aria-disabled="true"]):hover { transform: translateY(-2px); }
+.plan-cta-tel {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid rgba(246,244,236,.5);
+  color: var(--paper);
+  padding: 15px 24px;
+  font-size: 13.5px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  transition: background 0.3s, color 0.3s;
+}
+.plan-cta-tel:hover { background: var(--paper); color: var(--blue-dark); }
+
+.plan-notes {
+  max-width: 1180px;
+  margin: clamp(28px, 4vh, 44px) auto 0;
+  padding: 0 var(--gutter);
+  display: grid;
+  gap: 8px;
+  list-style: none;
+}
+.plan-notes li {
+  position: relative;
+  padding-left: 18px;
+  font-size: 12.5px;
+  color: var(--muted);
+  line-height: 1.8;
+}
+.plan-notes li::before {
+  content: "※";
+  position: absolute;
+  left: 0;
+  color: var(--muted);
+}
+
+.plans-spacer { height: clamp(52px, 9vh, 100px); }

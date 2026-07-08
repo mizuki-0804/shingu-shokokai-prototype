@@ -264,9 +264,9 @@
       .map(
         (feature, index) => `
         <article class="feature-card" data-reveal style="--reveal-delay:${index * 90}ms">
-          <div class="card-media"><img src="${feature.image}" alt="${feature.title}のイメージ写真" loading="lazy"></div>
+          <a class="card-media" href="./article-story.html"><img src="${feature.image}" alt="${feature.title}のイメージ写真" loading="lazy"></a>
           <div class="card-meta"><span>${feature.category}</span><time>${feature.date}</time></div>
-          <h3>${feature.title}</h3>
+          <h3><a href="./article-story.html">${feature.title}</a></h3>
           <p>${feature.excerpt}</p>
           <footer class="article-actions">
             <small>#${feature.tag}</small>
@@ -286,7 +286,7 @@
         const business = businesses.find((item) => item.id === interview.businessId);
         if (!business) return "";
         return `
-          <article class="interview-card" data-reveal style="--reveal-delay:${index * 110}ms">
+          <a class="interview-card" href="./article-interview.html" data-reveal style="--reveal-delay:${index * 110}ms">
             <div class="card-media"><img src="${business.image}" alt="${business.name}のイメージ写真" loading="lazy"></div>
             <div class="card-body">
               <span>INTERVIEW ${String(index + 1).padStart(2, "0")} — ${business.category}</span>
@@ -294,7 +294,7 @@
               <blockquote>${interview.quote}</blockquote>
               <p class="card-person">${interview.person}</p>
             </div>
-          </article>
+          </a>
         `;
       })
       .join("");
@@ -313,7 +313,7 @@
       .slice(0, 4)
       .map(
         (business, index) => `
-        <a class="biz-card" href="${business.detailPage ? `./business-detail.html?id=${business.id}` : "./businesses.html"}" data-reveal style="--reveal-delay:${index * 90}ms">
+        <a class="biz-card" href="${business.id === "shingu-bakery" ? "./pr-bakery.html" : business.detailPage ? `./business-detail.html?id=${business.id}` : "./businesses.html"}" data-reveal style="--reveal-delay:${index * 90}ms">
           <div class="biz-media"><img src="${business.image}" alt="${business.name}のイメージ写真" loading="lazy"></div>
           <div class="biz-body">
             <span class="biz-plan ${tierClass(business.planRank)}">${business.plan}</span>

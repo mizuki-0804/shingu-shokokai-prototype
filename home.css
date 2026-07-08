@@ -1216,6 +1216,7 @@ main, .site-footer, .site-header, .mobile-menu {
 }
 
 .photo-frame {
+  display: block;
   position: relative;
   overflow: hidden;
   aspect-ratio: 4 / 3;
@@ -1274,6 +1275,15 @@ main, .site-footer, .site-header, .mobile-menu {
   line-height: 1.42;
   letter-spacing: 0.02em;
   color: var(--ink);
+}
+
+.pickup-eyecatch-title a {
+  color: inherit;
+  transition: color 0.3s;
+}
+
+.pickup-photo:hover .pickup-eyecatch-title a {
+  color: var(--blue);
 }
 
 .pickup-copy {
@@ -1688,8 +1698,18 @@ main, .site-footer, .site-header, .mobile-menu {
 }
 
 .feature-card .card-media {
+  display: block;
   overflow: hidden;
   aspect-ratio: 4 / 3;
+}
+
+.feature-card h3 a {
+  color: inherit;
+  transition: color 0.3s;
+}
+
+.feature-card:hover h3 a {
+  color: var(--blue);
 }
 
 .feature-card .card-media img {
