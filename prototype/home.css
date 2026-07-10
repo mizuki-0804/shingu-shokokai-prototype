@@ -1233,12 +1233,13 @@ main, .site-footer, .site-header, .mobile-menu {
   padding: 0 var(--gutter);
 }
 
-/* 強調したセクション見出し（右カラム上部） */
+/* 強調したセクション見出し（モバイルは冒頭、デスクトップは右カラム上部） */
 .pickup-eyebrow {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
   gap: 10px;
+  margin-bottom: -4px;
   font-size: 13px;
   font-weight: 700;
   letter-spacing: 0.14em;
@@ -1435,9 +1436,23 @@ main, .site-footer, .site-header, .mobile-menu {
 @media (min-width: 980px) {
   .pickup {
     grid-template-columns: auto 1.05fr 1fr;
+    grid-template-areas: "vertical photo eyebrow" "vertical photo copy";
+    align-items: start;
   }
   .pickup-vertical {
     display: block;
+    grid-area: vertical;
+  }
+  .pickup-photo {
+    grid-area: photo;
+  }
+  .pickup-eyebrow {
+    grid-area: eyebrow;
+    margin-bottom: 0;
+    align-self: end;
+  }
+  .pickup-copy {
+    grid-area: copy;
   }
 }
 
