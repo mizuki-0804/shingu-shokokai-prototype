@@ -31,7 +31,7 @@
    ============================================================ */
 
 .article {
-  max-width: 760px;
+  max-width: 1180px;
   margin: 0 auto;
   padding: clamp(28px, 5vh, 52px) var(--gutter) 0;
 }
@@ -56,12 +56,15 @@
 
 .article-title {
   margin-top: 18px;
+  max-width: 920px;
   font-family: var(--font-display);
   font-size: var(--fs-h1);
   font-weight: 900;
   line-height: 1.5;
   letter-spacing: 0.02em;
   text-wrap: balance;
+  word-break: keep-all;
+  overflow-wrap: break-word;
 }
 
 .article-meta {
@@ -152,6 +155,8 @@
   letter-spacing: 0.02em;
   padding-left: 16px;
   border-left: 4px solid var(--blue);
+  word-break: keep-all;
+  overflow-wrap: break-word;
 }
 
 .article-body h3 {
@@ -353,6 +358,8 @@
   font-weight: 900;
   text-wrap: balance;
   letter-spacing: 0.04em;
+  word-break: keep-all;
+  overflow-wrap: break-word;
 }
 
 .related-grid { display: grid; gap: clamp(18px, 3vw, 30px); }
@@ -422,6 +429,7 @@
 
 .pr-title {
   margin-top: 16px;
+  max-width: 920px;
   font-family: var(--font-display);
   font-size: var(--fs-h1);
   font-weight: 900;
@@ -429,6 +437,8 @@
   letter-spacing: 0.02em;
   text-shadow: 0 2px 30px rgba(10,18,13,.4);
   text-wrap: balance;
+  word-break: keep-all;
+  overflow-wrap: break-word;
 }
 
 .pr-catch {
@@ -509,6 +519,8 @@
   font-weight: 900;
   letter-spacing: 0.04em;
   text-wrap: balance;
+  word-break: keep-all;
+  overflow-wrap: break-word;
 }
 
 .pr-lead { font-size: 15.5px; line-height: 2.05; color: #2c2a22; max-width: 720px; }
@@ -620,6 +632,8 @@
   font-weight: 900;
   letter-spacing: 0.04em;
   text-wrap: balance;
+  word-break: keep-all;
+  overflow-wrap: break-word;
 }
 .pr-cta-inner p { font-size: 14px; color: rgba(246,244,236,.8); line-height: 1.9; }
 .pr-cta-row { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; margin-top: 8px; }
