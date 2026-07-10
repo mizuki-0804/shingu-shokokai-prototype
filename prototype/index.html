@@ -16,7 +16,7 @@
       href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@700;900&family=Space+Grotesk:wght@400;500;600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./home.css?v=20260708-demo2" />
+    <link rel="stylesheet" href="./home.css?v=20260708-demo8" />
   </head>
   <body class="home">
     <!-- Opening -->
@@ -107,29 +107,21 @@
         <a class="hero-scroll" href="#search-dock" data-hero-seq="6"><span>SCROLL</span><i aria-hidden="true"></i></a>
       </section>
 
-      <!-- ============ SEARCH DOCK ============ -->
-      <section class="search-dock" id="search-dock" aria-label="会員企業を検索" data-hero-seq="6">
-        <form class="dock-form" action="./businesses.html">
-          <p class="dock-label"><em>SEARCH</em>会員企業をさがす</p>
-          <div class="dock-row">
-            <div class="dock-field">
-              <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2"/><path d="m16.5 16.5 5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-              <label class="visually-hidden" for="hero-query">キーワード</label>
-              <input id="hero-query" name="q" type="search" placeholder="お店の名前、業種、地域名など" />
-              <input id="hero-category" name="category" type="hidden" value="" />
-            </div>
-            <button id="hero-search-button" class="dock-submit" type="submit">検索する</button>
+      <!-- ============ CATEGORY DOCK（業種から探す） ============ -->
+      <section class="search-dock" id="search-dock" aria-labelledby="dock-label" data-hero-seq="6">
+        <div class="dock-form">
+          <div class="dock-head">
+            <p class="dock-label" id="dock-label"><em>FIND BY CATEGORY</em>業種から会員企業をさがす</p>
+            <a class="dock-all" href="./businesses.html">すべての会員企業を見る<i aria-hidden="true">→</i></a>
           </div>
-          <div class="dock-chips" role="tablist" aria-label="業種から探す">
-            <span>業種から</span>
-            <button type="button" class="is-active" data-hero-category="" role="tab" aria-selected="true">すべて</button>
-            <button type="button" data-hero-category="飲食" role="tab" aria-selected="false">飲食</button>
-            <button type="button" data-hero-category="建設" role="tab" aria-selected="false">住まい・建設</button>
-            <button type="button" data-hero-category="美容" role="tab" aria-selected="false">美容</button>
-            <button type="button" data-hero-category="健康" role="tab" aria-selected="false">健康</button>
-            <button type="button" data-hero-category="サービス" role="tab" aria-selected="false">サービス</button>
+          <div class="cat-grid">
+            <a class="cat-item" href="./businesses.html?category=飲食"><span class="cat-en">FOOD</span><strong>飲食</strong><i aria-hidden="true">→</i></a>
+            <a class="cat-item" href="./businesses.html?category=建設"><span class="cat-en">HOUSING</span><strong>住まい・建設</strong><i aria-hidden="true">→</i></a>
+            <a class="cat-item" href="./businesses.html?category=美容"><span class="cat-en">BEAUTY</span><strong>美容</strong><i aria-hidden="true">→</i></a>
+            <a class="cat-item" href="./businesses.html?category=健康"><span class="cat-en">HEALTH</span><strong>健康</strong><i aria-hidden="true">→</i></a>
+            <a class="cat-item" href="./businesses.html?category=サービス"><span class="cat-en">SERVICE</span><strong>サービス</strong><i aria-hidden="true">→</i></a>
           </div>
-        </form>
+        </div>
       </section>
 
       <!-- ============ NEWS TICKER ============ -->
@@ -146,29 +138,31 @@
       </section>
 
       <!-- ============ PICK UP ============ -->
+      <div class="pickup-band">
       <section class="pickup" aria-labelledby="pickup-title">
         <p class="pickup-vertical" data-reveal>新宮の仕事</p>
         <figure class="pickup-photo" data-reveal>
-          <a class="photo-frame" href="./article-story.html" data-parallax-img aria-label="記事「休日の朝に立ち寄りたい、新宮のパン屋」を読む">
-            <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=1400&q=82" alt="しんぐうベーカリーのイメージ写真" />
-            <span class="pickup-tag">FEATURE</span>
+          <a class="photo-frame" href="./article-life.html" data-parallax-img aria-label="記事「大家さんの利益を最大化する、新宮駅前の不動産パートナー」を読む">
+            <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=1400&q=82" alt="住まいと不動産のイメージ写真" />
+            <span class="pickup-tag"><i aria-hidden="true">★</i>今月のおすすめ</span>
           </a>
           <figcaption>
-            <span class="pickup-meta"><b>2026.07.08</b>・グルメ</span>
-            <h3 class="pickup-eyecatch-title"><a href="./article-story.html">少し楽しくする、<br />まちのベーカリー</a></h3>
+            <span class="pickup-meta"><b>2026.07.28</b>・住まい</span>
+            <h3 class="pickup-eyecatch-title"><a href="./article-life.html">大家さんの利益を<br />最大化する不動産会社</a></h3>
           </figcaption>
         </figure>
         <div class="pickup-copy">
-          <p class="section-eyebrow" data-reveal><em>PICK UP</em>今月のおすすめ</p>
+          <p class="pickup-eyebrow" data-reveal><i aria-hidden="true">★</i><em>MONTHLY PICK</em><span>今月のおすすめ</span><b>2026.07</b></p>
           <h2 id="pickup-title" data-reveal>まちで働く人の、<br />想いを読む。</h2>
           <p class="pickup-lead" data-reveal>お店や会社の背景を知ると、いつもの買い物や相談先が少し身近になります。</p>
           <div class="pickup-list" data-reveal aria-label="ピックアップ記事">
+            <a href="./article-life.html"><time>2026.07.28</time><span>大家さんの利益を最大化する不動産会社</span><i aria-hidden="true">→</i></a>
             <a href="./article-story.html"><time>2026.07.08</time><span>休日の朝に立ち寄りたい、新宮のパン屋</span><i aria-hidden="true">→</i></a>
-            <a href="./article-interview.html"><time>2026.07.18</time><span>地域で事業を続ける理由を聞く</span><i aria-hidden="true">→</i></a>
             <a href="./businesses.html"><time>2026.07.24</time><span>目的から探せる会員企業一覧へ</span><i aria-hidden="true">→</i></a>
           </div>
         </div>
       </section>
+      </div>
 
       <!-- ============ MARQUEE ============ -->
       <div class="marquee" aria-hidden="true">
@@ -274,10 +268,25 @@
             <strong data-count="640">0</strong>
             <span>新宮町商工会の会員事業者<br />（2026年時点）</span>
           </p>
-          <p data-reveal>飲食、住まい、美容、健康、サービスなど、必要な内容から町内の会員企業を探せます。業種やキーワードで絞り込み、気になるお店や会社の基本情報を確認できます。</p>
+          <p data-reveal>飲食、住まい、美容、健康、サービスなど、必要な内容から町内の会員企業を探せます。業種で絞り込み、気になるお店や会社の基本情報を確認できます。</p>
           <a class="button-primary" href="./businesses.html" data-reveal><span>事業者一覧を見る</span><i aria-hidden="true">→</i></a>
         </div>
         <div id="business-preview-list" class="directory-preview"></div>
+      </section>
+
+      <!-- ============ MEMBER LOGOS（加盟企業） ============ -->
+      <section class="members" aria-labelledby="members-title">
+        <div class="members-head" data-reveal>
+          <p class="section-eyebrow"><em>MEMBER COMPANIES</em>加盟企業</p>
+          <h2 id="members-title">まちを支える、加盟企業のみなさん</h2>
+          <p class="members-note">新宮町商工会には、さまざまな業種の事業者が加盟しています。<small>※ ロゴは掲載イメージです</small></p>
+        </div>
+        <div class="members-marquee" aria-label="加盟企業ロゴ（1列目）">
+          <div class="members-track" id="members-track-a" aria-hidden="true"></div>
+        </div>
+        <div class="members-marquee" aria-label="加盟企業ロゴ（2列目）">
+          <div class="members-track reverse" id="members-track-b" aria-hidden="true"></div>
+        </div>
       </section>
 
       <!-- ============ SERVICES ============ -->
@@ -444,6 +453,6 @@
     </footer>
 
     <script src="./data.js?v=20260707-plan10-1"></script>
-    <script src="./home.js?v=20260708-demo1"></script>
+    <script src="./home.js?v=20260708-demo3"></script>
   </body>
 </html>

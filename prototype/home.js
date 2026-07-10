@@ -84,7 +84,8 @@
         const speed = Number(el.dataset.parallax);
         const rect = el.getBoundingClientRect();
         const offset = rect.top + rect.height / 2 - window.innerHeight / 2;
-        el.style.transform = `translateY(${(offset * speed).toFixed(1)}px)`;
+        // スクロール分は --sy に。ポインター視差(--ppx)とCSS側で合成する
+        el.style.setProperty("--sy", `${(offset * speed).toFixed(1)}px`);
       });
     }
 
@@ -167,30 +168,7 @@
     play();
   }
 
-  /* ============ 検索ドック ============ */
-  const dockForm = qs(".dock-form");
-  const dockQuery = qs("#hero-query");
-  const dockCategory = qs("#hero-category");
-  if (dockForm && dockQuery) {
-    qsa("[data-hero-category]").forEach((button) => {
-      button.addEventListener("click", () => {
-        if (dockCategory) dockCategory.value = button.dataset.heroCategory || "";
-        qsa("[data-hero-category]").forEach((item) => {
-          const isActive = item === button;
-          item.classList.toggle("is-active", isActive);
-          item.setAttribute("aria-selected", isActive ? "true" : "false");
-        });
-      });
-    });
-
-    dockForm.addEventListener("submit", (event) => {
-      event.preventDefault();
-      const params = new URLSearchParams();
-      if (dockQuery.value.trim()) params.set("q", dockQuery.value.trim());
-      if (dockCategory?.value) params.set("category", dockCategory.value);
-      window.location.href = `./businesses.html${params.toString() ? `?${params}` : ""}`;
-    });
-  }
+  /* 業種ドックは各タイルが businesses.html?category=X へ直接遷移する静的リンク（JS不要） */
 
   /* ============ ニュースティッカー（シームレスループ用に複製） ============ */
   const tickerTrack = qs("#newsline-track");
@@ -327,6 +305,29 @@
       .join("");
   }
 
+  /* ============ 加盟企業ロゴ（無限スライダー） ============ */
+  const logoMono = (name) => {
+    const num = name.match(/(\d+)\s*$/);
+    return num ? num[1] : name.slice(0, 1);
+  };
+  const buildLogos = (list) =>
+    list
+      .map(
+        (b) =>
+          `<span class="logo-chip"><span class="logo-mono">${logoMono(b.name)}</span><span class="logo-text">${b.name}</span></span>`
+      )
+      .join("");
+  const trackA = qs("#members-track-a");
+  const trackB = qs("#members-track-b");
+  if (trackA && trackB && businesses.length) {
+    const half = Math.ceil(businesses.length / 2);
+    const rowA = businesses.slice(0, half);
+    const rowB = businesses.slice(half);
+    // 2セット並べてシームレスにループ
+    trackA.innerHTML = buildLogos(rowA).repeat(2);
+    trackB.innerHTML = buildLogos(rowB.length ? rowB : rowA).repeat(2);
+  }
+
   hydrateLikes();
 
   /* ============ 見出しの行リビール（まちの仕事） ============ */
@@ -384,5 +385,58 @@
     qsa("[data-count]").forEach((el) => countObserver.observe(el));
   } else {
     qsa("[data-count]").forEach((el) => (el.textContent = el.dataset.count));
+  }
+
+  /* ============ 演出強化（fine pointer かつ reduced-motion 以外） ============ */
+  const canEnhance = window.matchMedia("(pointer: fine)").matches && !prefersReduced;
+
+  if (canEnhance) {
+    // マグネティック：ヒーローのメニューパネルがカーソルにわずかに吸い付く
+    qsa(".hero-panels a").forEach((el) => {
+      el.addEventListener("pointermove", (event) => {
+        const rect = el.getBoundingClientRect();
+        const mx = (event.clientX - rect.left - rect.width / 2) * 0.22;
+        const my = (event.clientY - rect.top - rect.height / 2) * 0.28;
+        el.style.setProperty("--mx", `${mx.toFixed(1)}px`);
+        el.style.setProperty("--my", `${my.toFixed(1)}px`);
+      });
+      el.addEventListener("pointerleave", () => {
+        el.style.setProperty("--mx", "0px");
+        el.style.setProperty("--my", "0px");
+      });
+    });
+
+    // ヒーローのポインター視差：巨大文字 SHINGU が奥行きを持って追従
+    if (hero) {
+      hero.addEventListener("pointermove", (event) => {
+        const nx = event.clientX / window.innerWidth - 0.5;
+        hero.style.setProperty("--ppx", `${(nx * 26).toFixed(1)}px`);
+      });
+      hero.addEventListener("pointerleave", () => hero.style.setProperty("--ppx", "0px"));
+    }
+  }
+
+  // マーキーがスクロール速度で歪む（勢いよくスクロールすると文字が斜行）
+  if (!prefersReduced) {
+    let marqueeLast = window.scrollY;
+    let marqueeVel = 0;
+    let marqueeRaf = 0;
+    const relaxMarquee = () => {
+      marqueeVel *= 0.86;
+      document.documentElement.style.setProperty("--marquee-skew", `${(marqueeVel * 0.32).toFixed(2)}deg`);
+      if (Math.abs(marqueeVel) > 0.06) marqueeRaf = requestAnimationFrame(relaxMarquee);
+      else document.documentElement.style.setProperty("--marquee-skew", "0deg");
+    };
+    window.addEventListener(
+      "scroll",
+      () => {
+        const now = window.scrollY;
+        marqueeVel = Math.max(-16, Math.min(16, now - marqueeLast));
+        marqueeLast = now;
+        cancelAnimationFrame(marqueeRaf);
+        marqueeRaf = requestAnimationFrame(relaxMarquee);
+      },
+      { passive: true }
+    );
   }
 })();
