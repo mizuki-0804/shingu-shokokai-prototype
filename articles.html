@@ -12,7 +12,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@700;900&family=Space+Grotesk:wght@400;500;600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="./home.css?v=20260710-demo5" />
     <link rel="stylesheet" href="./article.css?v=20260710-demo1" />
-    <link rel="stylesheet" href="./directory.css?v=20260710-demo1" />
+    <link rel="stylesheet" href="./directory.css?v=20260710-demo2" />
   </head>
   <body class="home subpage">
     <div class="page-progress" aria-hidden="true"><i></i></div>
@@ -65,9 +65,12 @@
           <p>カテゴリから読みたい記事を絞り込めます。</p>
         </div>
 
-        <div class="filter-shortcuts" role="tablist" aria-label="カテゴリで絞り込み" id="article-filters">
-          <span>カテゴリで絞る</span>
-        </div>
+        <label class="dock-select article-category-select" for="article-category">
+          <span class="visually-hidden">カテゴリを選ぶ</span>
+          <select id="article-category">
+            <option value="">すべてのカテゴリ</option>
+          </select>
+        </label>
 
         <div class="list-status">
           <span id="result-count">0件</span>
@@ -151,7 +154,7 @@
           if (categories.indexOf(a.category) === -1) categories.push(a.category);
         });
 
-        var filters = document.getElementById("article-filters");
+        var categorySelect = document.getElementById("article-category");
         var list = document.getElementById("article-list");
         var count = document.getElementById("result-count");
         var reset = document.getElementById("reset-filters");
@@ -181,32 +184,18 @@
             })
             .join("");
           count.textContent = items.length + "件";
-          filters.querySelectorAll("button").forEach(function (b) {
-            var active = (b.dataset.category || "") === current;
-            b.classList.toggle("is-active", active);
-            b.setAttribute("aria-selected", active ? "true" : "false");
-          });
+          categorySelect.value = current;
         }
 
-        // チップ生成
-        var allBtn = document.createElement("button");
-        allBtn.type = "button";
-        allBtn.textContent = "すべて";
-        allBtn.dataset.category = "";
-        allBtn.setAttribute("role", "tab");
-        filters.appendChild(allBtn);
+        // カテゴリ選択肢を生成
         categories.forEach(function (c) {
-          var b = document.createElement("button");
-          b.type = "button";
-          b.textContent = c;
-          b.dataset.category = c;
-          b.setAttribute("role", "tab");
-          filters.appendChild(b);
+          var opt = document.createElement("option");
+          opt.value = c;
+          opt.textContent = c;
+          categorySelect.appendChild(opt);
         });
-        filters.addEventListener("click", function (e) {
-          var b = e.target.closest("button");
-          if (!b) return;
-          current = b.dataset.category || "";
+        categorySelect.addEventListener("change", function () {
+          current = categorySelect.value;
           render();
         });
         reset.addEventListener("click", function () {

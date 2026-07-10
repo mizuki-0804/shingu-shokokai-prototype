@@ -553,6 +553,11 @@ body > .page-progress:not(:has(i)),
    記事一覧（articles.html）
    ============================================================ */
 
+.article-category-select {
+  max-width: 280px;
+  margin-bottom: 18px;
+}
+
 /* 一覧ページは行数が増えるため、トップの4列+段差ではなく3列フラットで揃える */
 .article-index-grid { margin-top: 6px; }
 
