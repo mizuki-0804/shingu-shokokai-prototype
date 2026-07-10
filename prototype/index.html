@@ -12,6 +12,7 @@
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='48' fill='%231d4f7e'/><text x='50' y='68' font-size='52' text-anchor='middle' fill='%23f7f5ef'>新</text></svg>" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://images.unsplash.com" />
     <link
       href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@700;900&family=Space+Grotesk:wght@400;500;600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap"
       rel="stylesheet"
@@ -47,7 +48,7 @@
         <a href="./plans.html">掲載プラン</a>
         <a href="#news">お知らせ</a>
       </nav>
-      <a class="header-cta" href="#contact"><span>相談する</span></a>
+      <a class="header-cta" href="./contact.html"><span>相談する</span></a>
       <button class="menu-toggle" id="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="メニューを開く">
         <i></i><i></i>
       </button>
@@ -60,7 +61,7 @@
       <a href="./businesses.html">会員企業一覧</a>
       <a href="./plans.html">掲載プラン</a>
       <a href="#news">お知らせ</a>
-      <a class="mobile-menu-cta" href="#contact">商工会に相談する</a>
+      <a class="mobile-menu-cta" href="./contact.html">商工会に相談する</a>
     </nav>
 
     <main id="top">
@@ -68,13 +69,13 @@
       <section class="hero" aria-labelledby="hero-title">
         <div class="hero-media" aria-hidden="true">
           <figure class="hero-slide is-active">
-            <img src="https://www.crossroadfukuoka.jp/storage/tourism_attractions/11453/responsive_images/plHyVYdYjfSD4JHmXDMaGJwbAh0hnnABiRD1fG7M__1611_1074.jpg" alt="" />
+            <img fetchpriority="high" decoding="async" src="https://www.crossroadfukuoka.jp/storage/tourism_attractions/11453/responsive_images/plHyVYdYjfSD4JHmXDMaGJwbAh0hnnABiRD1fG7M__1611_1074.jpg" alt="" />
           </figure>
           <figure class="hero-slide">
-            <img src="https://images.unsplash.com/photo-1556741533-411cf82e4e2d?auto=format&fit=crop&w=1800&q=82" alt="" />
+            <img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1556741533-411cf82e4e2d?auto=format&fit=crop&w=1800&q=82" alt="" />
           </figure>
           <figure class="hero-slide">
-            <img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1800&q=82" alt="" />
+            <img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1800&q=82" alt="" />
           </figure>
           <div class="hero-scrim"></div>
         </div>
@@ -96,7 +97,7 @@
           <div class="hero-panels" data-hero-seq="5" aria-label="おすすめのメニュー">
             <a href="#features"><span>STORIES</span><strong>地域記事を読む</strong><i aria-hidden="true">→</i></a>
             <a href="./businesses.html"><span>MEMBERS</span><strong>会員企業を探す</strong><i aria-hidden="true">→</i></a>
-            <a href="#contact"><span>SUPPORT</span><strong>商工会に相談する</strong><i aria-hidden="true">→</i></a>
+            <a href="./contact.html"><span>SUPPORT</span><strong>商工会に相談する</strong><i aria-hidden="true">→</i></a>
           </div>
         </div>
 
@@ -150,7 +151,7 @@
         <p class="pickup-eyebrow" data-reveal><i aria-hidden="true">★</i><em>MONTHLY PICK</em><span>今月のおすすめ</span><b>2026.07</b></p>
         <figure class="pickup-photo" data-reveal>
           <a class="photo-frame" href="./article-life.html" data-parallax-img aria-label="記事「大家さんの利益を最大化する、新宮駅前の不動産パートナー」を読む">
-            <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=1400&q=82" alt="住まいと不動産のイメージ写真" />
+            <img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=1400&q=82" alt="住まいと不動産のイメージ写真" />
             <span class="pickup-tag"><i aria-hidden="true">★</i>今月のおすすめ</span>
           </a>
           <figcaption>
@@ -219,7 +220,7 @@
 
         <article class="lead-story" data-reveal>
           <a class="lead-media" href="./article-story.html" aria-label="特集記事を読む">
-            <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=1400&q=82" alt="地域のお店で接客する事業者の様子" />
+            <img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=1400&q=82" alt="地域のお店で接客する事業者の様子" />
             <span class="lead-badge">FEATURED STORY</span>
           </a>
           <div class="lead-body">
@@ -307,13 +308,13 @@
           <p>経営の相談から、地域のお店・会社を知るきっかけまで。新宮町の仕事を身近につなぎます。</p>
         </div>
         <div class="service-grid">
-          <a href="#contact" data-reveal>
+          <a href="./contact.html?type=経営相談" data-reveal>
             <span class="service-num">01</span>
             <h3>経営相談</h3>
             <p>資金繰り、販路、価格設定、広報など、日々の経営の悩みを相談できます。</p>
             <i aria-hidden="true">→</i>
           </a>
-          <a href="#contact" data-reveal>
+          <a href="./contact.html?type=創業" data-reveal>
             <span class="service-num">02</span>
             <h3>創業支援</h3>
             <p>開業前の準備、事業計画、届出など、地域で始めるための不安を一緒に整理します。</p>
@@ -337,7 +338,7 @@
             <p>お店紹介、インタビュー、商品・サービス紹介など、地域に知ってほしい内容を相談できます。</p>
             <i aria-hidden="true">→</i>
           </a>
-          <a id="join" href="#contact" data-reveal>
+          <a id="join" href="./contact.html?type=入会" data-reveal>
             <span class="service-num">06</span>
             <h3>入会案内</h3>
             <p>商工会への加入や青年部活動など、地域の事業者とつながるきっかけを案内します。</p>
@@ -429,14 +430,14 @@
           </dl>
           <div class="contact-actions" data-reveal>
             <a class="button-ghost" href="http://www.shinguumachi.or.jp/about" target="_blank" rel="noreferrer"><span>アクセスを見る</span><i aria-hidden="true">↗</i></a>
-            <a class="button-primary" href="mailto:shingu@shokokai.ne.jp"><span>商工会へ相談する</span><i aria-hidden="true">→</i></a>
+            <a class="button-primary" href="./contact.html"><span>商工会へ相談する</span><i aria-hidden="true">→</i></a>
           </div>
         </div>
         <aside id="apply" class="apply-panel" data-reveal>
           <p class="section-eyebrow inverted-eyebrow"><em>FOR LOCAL BUSINESSES</em>掲載のご案内</p>
           <h2>地元企業の魅力を、<br />地域へ届けませんか。</h2>
           <p>お店紹介、経営者インタビュー、商品・サービス紹介など、地域の人に知ってほしい内容を相談できます。</p>
-          <a class="button-light" href="https://forms.google.com" target="_blank" rel="noreferrer"><span>PRについて相談する</span><i aria-hidden="true">↗</i></a>
+          <a class="button-light" href="./contact.html?type=pr"><span>PRについて相談する</span><i aria-hidden="true">→</i></a>
           <a class="apply-plans" href="./plans.html">掲載プランを見る<i aria-hidden="true">→</i></a>
         </aside>
       </section>

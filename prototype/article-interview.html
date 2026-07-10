@@ -9,6 +9,7 @@
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='48' fill='%231d4f7e'/><text x='50' y='68' font-size='52' text-anchor='middle' fill='%23f7f5ef'>新</text></svg>" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://images.unsplash.com" />
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@700;900&family=Space+Grotesk:wght@400;500;600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="./home.css?v=20260710-demo5" />
     <link rel="stylesheet" href="./article.css?v=20260710-demo1" />
@@ -29,7 +30,7 @@
         <a href="./plans.html">掲載プラン</a>
         <a href="./index.html#news">お知らせ</a>
       </nav>
-      <a class="header-cta" href="./index.html#contact"><span>相談する</span></a>
+      <a class="header-cta" href="./contact.html"><span>相談する</span></a>
       <button class="menu-toggle" id="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="メニューを開く"><i></i><i></i></button>
     </header>
 
@@ -40,7 +41,7 @@
       <a href="./businesses.html">会員企業一覧</a>
       <a href="./plans.html">掲載プラン</a>
       <a href="./index.html#news">お知らせ</a>
-      <a class="mobile-menu-cta" href="./index.html#contact">商工会に相談する</a>
+      <a class="mobile-menu-cta" href="./contact.html">商工会に相談する</a>
     </nav>
 
     <main id="top">
@@ -63,7 +64,7 @@
 
         <div class="article-cover">
           <figure>
-            <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1600&q=82" alt="しんぐうベーカリーの店主" />
+            <img fetchpriority="high" decoding="async" src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1600&q=82" alt="しんぐうベーカリーの店主" />
             <figcaption>しんぐうベーカリー 店主（新宮町中央駅前）</figcaption>
           </figure>
         </div>
@@ -99,7 +100,7 @@
           </div>
 
           <div class="inline-card">
-            <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=600&q=80" alt="しんぐうベーカリー" />
+            <img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=600&q=80" alt="しんぐうベーカリー" />
             <div class="ic-body">
               <span class="ic-eyebrow">MEMBER</span>
               <h4>しんぐうベーカリー</h4>
@@ -135,17 +136,17 @@
         <div class="related-head"><em>RELATED</em><h2>あわせて読む</h2></div>
         <div class="related-grid">
           <a class="related-card" href="./article-story.html">
-            <div class="rc-media"><img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=800&q=80" alt="地域記事"></div>
+            <div class="rc-media"><img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=800&q=80" alt="地域記事"></div>
             <span class="rc-cat">お店紹介</span>
             <h3>休日の朝に立ち寄りたい、新宮のパン屋</h3>
           </a>
           <a class="related-card" href="./pr-bakery.html">
-            <div class="rc-media"><img src="https://images.unsplash.com/photo-1608198093002-ad4e005484ec?auto=format&fit=crop&w=800&q=80" alt="しんぐうベーカリー掲載ページ"></div>
+            <div class="rc-media"><img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1608198093002-ad4e005484ec?auto=format&fit=crop&w=800&q=80" alt="しんぐうベーカリー掲載ページ"></div>
             <span class="rc-cat">会員企業</span>
             <h3>しんぐうベーカリー ｜ お店の詳細を見る</h3>
           </a>
           <a class="related-card" href="./articles.html?category=事業者の声">
-            <div class="rc-media"><img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=800&q=80" alt="事業者の声一覧"></div>
+            <div class="rc-media"><img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=800&q=80" alt="事業者の声一覧"></div>
             <span class="rc-cat">事業者の声</span>
             <h3>新宮で働く人に聞く ｜ インタビュー一覧</h3>
           </a>

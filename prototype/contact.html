@@ -3,16 +3,14 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>会員企業一覧 | 新宮町商工会</title>
-    <meta name="description" content="新宮町商工会の会員企業一覧。業種やエリアで町内のお店・事業者を探せます。" />
+    <title>相談・お問い合わせ | 新宮町商工会</title>
+    <meta name="description" content="経営相談、創業準備、掲載・PRのご相談、商工会への入会まで。新宮町商工会の相談窓口です。" />
     <meta name="robots" content="noindex, nofollow, noarchive" />
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='48' fill='%231d4f7e'/><text x='50' y='68' font-size='52' text-anchor='middle' fill='%23f7f5ef'>新</text></svg>" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="preconnect" href="https://images.unsplash.com" />
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@700;900&family=Space+Grotesk:wght@400;500;600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="./home.css?v=20260710-demo5" />
-    <link rel="stylesheet" href="./article.css?v=20260710-demo1" />
     <link rel="stylesheet" href="./directory.css?v=20260710-demo3" />
   </head>
   <body class="home subpage">
@@ -48,57 +46,66 @@
     <main id="top">
       <nav class="breadcrumb" aria-label="パンくず">
         <a href="./index.html">トップ</a><span>/</span>
-        <b>会員企業一覧</b>
+        <b>相談・お問い合わせ</b>
       </nav>
 
       <section class="dir-hero">
-        <p class="eyebrow">Business Directory</p>
-        <h1>町内のお店・事業者を探す</h1>
-        <p class="dir-lead">暮らしや仕事で必要な地元の情報を、業種やエリアからすぐに探せます。企業名や所在地、連絡先、ホームページ、SNSまでまとめて確認できます。</p>
-        <p class="dir-count"><strong>640</strong><span>新宮町商工会の<br />会員事業者</span></p>
+        <p class="eyebrow">Contact</p>
+        <h1>商工会に相談する</h1>
+        <p class="dir-lead">経営のこと、創業準備、お店のPR、商工会への入会まで。内容が固まっていなくても大丈夫です。まずはお気軽にご相談ください。</p>
       </section>
 
-      <section class="section businesses-section" aria-labelledby="business-list-title">
+      <section class="section businesses-section" aria-labelledby="contact-form-title">
         <div class="section-heading split-heading">
           <div>
-            <p class="eyebrow">Search</p>
-            <h2 id="business-list-title">会員企業一覧</h2>
+            <p class="eyebrow">Form</p>
+            <h2 id="contact-form-title">相談フォーム</h2>
           </div>
-          <p>業種・エリアから絞り込めます。</p>
+          <p>2営業日以内を目安に、担当者からご連絡します。</p>
         </div>
 
-        <div class="filters" aria-label="絞り込み条件">
-          <label>
-            業種
-            <select id="category-filter">
-              <option value="">すべて</option>
+        <form class="contact-form" id="contact-form" novalidate>
+          <label for="cf-name">
+            <span class="label-text">お名前 <em class="req" aria-hidden="true">必須</em></span>
+            <input type="text" id="cf-name" name="name" required autocomplete="name" placeholder="例）新宮 太郎" />
+          </label>
+          <label for="cf-company">
+            事業者名・屋号（任意）
+            <input type="text" id="cf-company" name="company" autocomplete="organization" placeholder="例）しんぐうベーカリー" />
+          </label>
+          <label for="cf-contact">
+            <span class="label-text">ご連絡先（メールまたは電話） <em class="req" aria-hidden="true">必須</em></span>
+            <input type="text" id="cf-contact" name="contact" required placeholder="例）info@example.com / 092-000-0000" />
+          </label>
+          <label class="dock-select contact-type" for="cf-type">
+            相談の種類
+            <select id="cf-type" name="type">
+              <option value="経営相談">経営相談（資金繰り・販路など）</option>
+              <option value="創業">創業・開業の相談</option>
+              <option value="pr">お店・会社の掲載やPR</option>
+              <option value="入会">商工会への入会</option>
+              <option value="その他">その他</option>
             </select>
           </label>
-          <label>
-            エリア
-            <select id="area-filter">
-              <option value="">すべて</option>
-            </select>
+          <label for="cf-body">
+            <span class="label-text">ご相談内容 <em class="req" aria-hidden="true">必須</em></span>
+            <textarea id="cf-body" name="body" required placeholder="いま困っていること、相談したいことをご記入ください。"></textarea>
           </label>
-        </div>
-        <div class="filter-shortcuts" role="tablist" aria-label="業種で絞り込み">
-          <span>業種で絞る</span>
-          <button type="button" data-filter-category="" role="tab">すべて</button>
-          <button type="button" data-filter-category="飲食" role="tab">飲食</button>
-          <button type="button" data-filter-category="建設" role="tab">住まい・建設</button>
-          <button type="button" data-filter-category="美容" role="tab">美容</button>
-          <button type="button" data-filter-category="健康" role="tab">健康</button>
-          <button type="button" data-filter-category="サービス" role="tab">サービス</button>
+          <p class="contact-note">※ これはデモ画面です。送信ボタンを押しても実際には送信されません。</p>
+          <button class="button primary contact-submit" type="submit"><span>この内容で相談する</span></button>
+        </form>
+
+        <div class="form-done" id="form-done" hidden>
+          <p class="fd-mark" aria-hidden="true">✓</p>
+          <h3>ご相談を受け付けました（デモ）</h3>
+          <p>本番環境では、ここで受付完了メールが届き、担当者から2営業日以内にご連絡します。</p>
+          <a class="button primary" href="./index.html"><span>トップへ戻る</span></a>
         </div>
 
-        <div id="directory-ad-slot" class="directory-ad-slot" aria-label="おすすめの事業者"></div>
-
-        <div class="list-status">
-          <span id="result-count">0件</span>
-          <button id="reset-filters" type="button">条件をクリア</button>
+        <div class="contact-alt">
+          <p>お急ぎの場合は、お電話でもご相談いただけます。</p>
+          <p class="contact-alt-tel"><a href="tel:0929634567">092-963-4567</a><span>（新宮町商工会・平日 9:00-17:00）</span></p>
         </div>
-        <p class="plan-size-note">掲載カードの大きさ・表示順は掲載プラン（10万円・5万円・3万円・1万円）によって変わります。</p>
-        <div id="business-list" class="business-list directory-list"></div>
       </section>
     </main>
 
@@ -122,8 +129,28 @@
     </footer>
 
     <script>
-      // モバイルメニュー（app.js は一覧描画・絞り込み・いいねを担当）
+      // 相談フォーム（デモ送信）・モバイルメニュー
       (function () {
+        "use strict";
+
+        var form = document.getElementById("contact-form");
+        var done = document.getElementById("form-done");
+
+        // ?type=pr 等で相談種別を初期選択
+        var param = new URLSearchParams(location.search).get("type");
+        var typeSelect = document.getElementById("cf-type");
+        if (param && typeSelect.querySelector('option[value="' + param + '"]')) {
+          typeSelect.value = param;
+        }
+
+        form.addEventListener("submit", function (e) {
+          e.preventDefault();
+          if (!form.reportValidity()) return;
+          form.hidden = true;
+          done.hidden = false;
+          done.scrollIntoView({ block: "center", behavior: "smooth" });
+        });
+
         var t = document.getElementById("menu-toggle");
         var m = document.getElementById("mobile-menu");
         if (!t || !m) return;
@@ -145,7 +172,5 @@
         });
       })();
     </script>
-    <script src="./data.js?v=20260707-plan10-1"></script>
-    <script src="./app.js?v=20260707-plan10-1"></script>
   </body>
 </html>
