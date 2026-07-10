@@ -848,6 +848,15 @@ main, .site-footer, .site-header, .mobile-menu {
   font-size: 13px;
   font-weight: 700;
   letter-spacing: 0.14em;
+  word-break: keep-all;
+}
+
+/* モバイル: 英字ラベルと日本語見出しを縦積みにして中途半端な折返しを防ぐ */
+@media (max-width: 600px) {
+  .dock-label {
+    flex-direction: column;
+    gap: 6px;
+  }
 }
 
 .dock-label em {
@@ -1042,9 +1051,18 @@ main, .site-footer, .site-header, .mobile-menu {
   transform: translateX(5px);
 }
 
+/* モバイル: 見出し+一覧へ を上段（両端揃え）、ティッカーを下段に */
 @media (max-width: 700px) {
   .newsline { flex-wrap: wrap; gap: 12px; }
-  .newsline-track { min-width: 100%; order: 3; border-left: 0; padding-left: 0; }
+  .newsline h2 { flex: 1; }
+  .newsline-track {
+    min-width: 100%;
+    order: 3;
+    border-left: 0;
+    padding-left: 0;
+    border-top: 1px solid var(--line-strong);
+    padding-top: 12px;
+  }
 }
 
 /* ============================================================
@@ -1837,6 +1855,12 @@ main, .site-footer, .site-header, .mobile-menu {
   .feature-card:nth-child(even) {
     margin-top: 44px;
   }
+}
+
+.feature-more {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: clamp(28px, 4vh, 40px);
 }
 
 /* ============================================================

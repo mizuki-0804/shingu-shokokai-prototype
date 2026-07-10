@@ -548,3 +548,15 @@ body > .page-progress:not(:has(i)),
   margin: clamp(40px, 7vh, 72px) auto 0;
   padding: 0 var(--gutter);
 }
+
+/* ============================================================
+   記事一覧（articles.html）
+   ============================================================ */
+
+/* 一覧ページは行数が増えるため、トップの4列+段差ではなく3列フラットで揃える */
+.article-index-grid { margin-top: 6px; }
+
+@media (min-width: 1080px) {
+  .article-index-grid { grid-template-columns: repeat(3, 1fr); }
+  .article-index-grid .feature-card:nth-child(even) { margin-top: 0; }
+}
