@@ -748,6 +748,17 @@ body > .page-progress:not(:has(i)),
    入会案内（nyukai.html）
    ============================================================ */
 
+/* .article-body は本来 article-cover（幅1180の写真）と組で使う前提の
+   幅720センタリング要素。写真のないページでは dir-hero（幅1180センタリング）
+   との中心がずれて「中央に小さくまとまって見える」ため、businesses-section
+   （dir-hero と同じ幅1180センタリング）に内包し、article-body 側は左寄せの
+   読みやすい幅の帯として振る舞わせる */
+.businesses-section > .article-body {
+  max-width: 760px;
+  margin: clamp(30px, 5vh, 56px) 0 0;
+  padding: 0 0 clamp(52px, 9vh, 96px);
+}
+
 .download-card {
   display: grid;
   gap: 18px;
