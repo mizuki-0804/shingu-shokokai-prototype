@@ -2715,65 +2715,23 @@ main, .site-footer, .site-header, .mobile-menu {
   margin-top: 6px;
 }
 
-.apply-panel {
-  position: relative;
-  display: grid;
-  gap: 18px;
-  align-content: center;
-  background: var(--blue-dark);
-  color: var(--paper);
-  padding: clamp(32px, 5vw, 56px);
-  overflow: hidden;
-}
-
-.apply-panel::before {
-  content: "PR";
-  position: absolute;
-  right: -0.08em;
-  bottom: -0.24em;
-  font-family: var(--font-en);
-  font-weight: 600;
-  font-size: clamp(110px, 16vw, 210px);
-  line-height: 1;
-  color: transparent;
-  -webkit-text-stroke: 1px rgba(246, 244, 236, 0.14);
-  pointer-events: none;
-}
-
-.apply-panel h2 {
-  font-size: var(--fs-h2);
-  font-weight: 900;
-  letter-spacing: 0.07em;
-  line-height: 1.6;
-  text-wrap: balance;
-}
-
-.apply-panel > p {
-  font-size: 13.5px;
-  line-height: 2;
-  color: rgba(246, 244, 236, 0.78);
-  max-width: 440px;
-}
-
-.apply-panel .button-light {
-  justify-self: start;
-}
-
 .apply-plans {
   display: inline-flex;
   align-items: center;
   gap: 8px;
+  margin-top: 4px;
   font-size: 13px;
   font-weight: 500;
   letter-spacing: 0.1em;
-  color: rgba(246, 244, 236, 0.82);
+  color: var(--muted);
   text-decoration: underline;
   text-underline-offset: 4px;
-  text-decoration-color: rgba(246, 244, 236, 0.4);
+  text-decoration-color: color-mix(in srgb, var(--blue) 40%, transparent);
+  transition: color 0.3s;
 }
 
 .apply-plans:hover {
-  color: #fff;
+  color: var(--blue);
 }
 
 .apply-plans i {
@@ -2781,8 +2739,12 @@ main, .site-footer, .site-header, .mobile-menu {
 }
 
 @media (min-width: 980px) {
-  .contact {
+  .contact:not(.contact-single) {
     grid-template-columns: 1.05fr 1fr;
+  }
+
+  .contact-single .contact-info {
+    max-width: 640px;
   }
 }
 
