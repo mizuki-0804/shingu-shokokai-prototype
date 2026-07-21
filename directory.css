@@ -812,3 +812,70 @@ body > .page-progress:not(:has(i)),
     justify-self: end;
   }
 }
+
+/* ============================================================
+   歴代会長（rekidai.html）
+   ============================================================ */
+
+.placeholder-note {
+  margin-bottom: 28px;
+  padding: 14px 18px;
+  background: var(--paper-deep);
+  border-left: 3px solid var(--gold);
+  font-size: 12.5px;
+  line-height: 1.9;
+  color: var(--muted);
+}
+
+.chairman-grid {
+  display: grid;
+  gap: clamp(24px, 3.4vw, 36px) clamp(18px, 2.6vw, 28px);
+  grid-template-columns: repeat(2, 1fr);
+  padding-bottom: clamp(52px, 9vh, 96px);
+}
+
+@media (min-width: 640px) {
+  .chairman-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (min-width: 980px) {
+  .chairman-grid { grid-template-columns: repeat(5, 1fr); }
+}
+
+.chairman-card {
+  display: grid;
+  gap: 10px;
+}
+
+.chairman-photo {
+  aspect-ratio: 3 / 4;
+  background: repeating-linear-gradient(45deg, var(--paper-deep) 0 12px, var(--surface) 12px 24px);
+  border: 1px solid var(--line-strong);
+  display: grid;
+  place-items: center;
+  text-align: center;
+  color: var(--muted);
+  font-size: 12px;
+  letter-spacing: 0.06em;
+}
+
+.chairman-gen {
+  font-family: var(--font-en);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: var(--blue);
+}
+
+.chairman-name {
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 900;
+  letter-spacing: 0.03em;
+  color: var(--muted);
+}
+
+.chairman-term {
+  font-size: 12px;
+  color: var(--muted);
+}
