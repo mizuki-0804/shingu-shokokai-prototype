@@ -3,15 +3,14 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>会員企業一覧 | 新宮町商工会</title>
-    <meta name="description" content="新宮町商工会の会員企業一覧。業種やエリアで町内のお店・事業者を探せます。" />
+    <title>商工会について | 新宮町商工会</title>
+    <meta name="description" content="新宮町商工会とはどんな団体か、役員紹介・支援メニュー・会館使用・概要とアクセスをまとめてご案内します。" />
     <meta name="robots" content="noindex, nofollow, noarchive" />
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='48' fill='%231d4f7e'/><text x='50' y='68' font-size='52' text-anchor='middle' fill='%23f7f5ef'>新</text></svg>" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="preconnect" href="https://images.unsplash.com" />
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@700;900&family=Space+Grotesk:wght@400;500;600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="./home.css?v=20260715-demo1" />
+    <link rel="stylesheet" href="./home.css?v=20260715-demo2" />
     <link rel="stylesheet" href="./article.css?v=20260715-demo2" />
     <link rel="stylesheet" href="./directory.css?v=20260716-demo2" />
   </head>
@@ -61,57 +60,42 @@
     <main id="top">
       <nav class="breadcrumb" aria-label="パンくず">
         <a href="./index.html">トップ</a><span>/</span>
-        <b>会員企業一覧</b>
+        <b>商工会について</b>
       </nav>
 
       <section class="dir-hero">
-        <p class="eyebrow">Business Directory</p>
-        <h1>町内のお店・事業者を探す</h1>
-        <p class="dir-lead">暮らしや仕事で必要な地元の情報を、業種やエリアからすぐに探せます。企業名や所在地、連絡先、ホームページ、SNSまでまとめて確認できます。</p>
-        <p class="dir-count"><strong>640</strong><span>新宮町商工会の<br />会員事業者</span></p>
+        <p class="eyebrow">About Us</p>
+        <h1>商工会について</h1>
+        <p class="dir-lead">新宮町商工会は、町内の商工業者の経営支援と地域の活性化を目的として、特別の法律にもとづき設立された団体です。役員体制・支援メニュー・会館の使い方・組織概要とアクセスを、このページからまとめてご覧いただけます。</p>
       </section>
 
-      <section class="section businesses-section" aria-labelledby="business-list-title">
-        <div class="section-heading split-heading">
-          <div>
-            <p class="eyebrow">Search</p>
-            <h2 id="business-list-title">会員企業一覧</h2>
-          </div>
-          <p>業種・エリアから絞り込めます。</p>
+      <section class="section businesses-section" aria-label="商工会について詳しく見る">
+        <div class="hub-grid">
+          <a class="hub-card" href="./yakuin.html">
+            <p class="hub-card-eyebrow">Our Team</p>
+            <h3>役員紹介</h3>
+            <p>現在の執行部と、これまで商工会を牽引してきた歴代会長をご紹介します。</p>
+            <i class="hub-card-arrow" aria-hidden="true">詳しく見る →</i>
+          </a>
+          <a class="hub-card" href="./shien.html">
+            <p class="hub-card-eyebrow">Support</p>
+            <h3>支援メニュー</h3>
+            <p>経営指導、融資のあっせん、共済・保険、創業支援など、会員が受けられる支援を紹介します。</p>
+            <i class="hub-card-arrow" aria-hidden="true">詳しく見る →</i>
+          </a>
+          <a class="hub-card" href="./kaikan.html">
+            <p class="hub-card-eyebrow">Facility</p>
+            <h3>会館使用</h3>
+            <p>商工会館の会議室・研修室を、会員・会員外を問わず有料でご利用いただけます。</p>
+            <i class="hub-card-arrow" aria-hidden="true">詳しく見る →</i>
+          </a>
+          <a class="hub-card" href="./gaiyo.html">
+            <p class="hub-card-eyebrow">Profile</p>
+            <h3>概要・アクセス</h3>
+            <p>設立年月日や会員数などの組織概要と、商工会館までのアクセスをご案内します。</p>
+            <i class="hub-card-arrow" aria-hidden="true">詳しく見る →</i>
+          </a>
         </div>
-
-        <div class="filters" aria-label="絞り込み条件">
-          <label>
-            業種
-            <select id="category-filter">
-              <option value="">すべて</option>
-            </select>
-          </label>
-          <label>
-            エリア
-            <select id="area-filter">
-              <option value="">すべて</option>
-            </select>
-          </label>
-        </div>
-        <div class="filter-shortcuts" role="tablist" aria-label="業種で絞り込み">
-          <span>業種で絞る</span>
-          <button type="button" data-filter-category="" role="tab">すべて</button>
-          <button type="button" data-filter-category="飲食" role="tab">飲食</button>
-          <button type="button" data-filter-category="建設" role="tab">住まい・建設</button>
-          <button type="button" data-filter-category="美容" role="tab">美容</button>
-          <button type="button" data-filter-category="健康" role="tab">健康</button>
-          <button type="button" data-filter-category="サービス" role="tab">サービス</button>
-        </div>
-
-        <div id="directory-ad-slot" class="directory-ad-slot" aria-label="おすすめの事業者"></div>
-
-        <div class="list-status">
-          <span id="result-count">0件</span>
-          <button id="reset-filters" type="button">条件をクリア</button>
-        </div>
-        <p class="plan-size-note">掲載カードの大きさ・表示順は掲載プラン（10万円・5万円・3万円・1万円）によって変わります。</p>
-        <div id="business-list" class="business-list directory-list"></div>
       </section>
     </main>
 
@@ -137,7 +121,7 @@
     </footer>
 
     <script>
-      // モバイルメニュー（app.js は一覧描画・絞り込み・いいねを担当）
+      // モバイルメニュー
       (function () {
         var t = document.getElementById("menu-toggle");
         var m = document.getElementById("mobile-menu");
@@ -160,7 +144,5 @@
         });
       })();
     </script>
-    <script src="./data.js?v=20260707-plan10-1"></script>
-    <script src="./app.js?v=20260707-plan10-1"></script>
   </body>
 </html>

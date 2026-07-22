@@ -3,17 +3,17 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>会員企業一覧 | 新宮町商工会</title>
-    <meta name="description" content="新宮町商工会の会員企業一覧。業種やエリアで町内のお店・事業者を探せます。" />
+    <title>会館使用 | 新宮町商工会</title>
+    <meta name="description" content="新宮町商工会館の会議室・研修室の利用料金と申込方法をご案内します。" />
     <meta name="robots" content="noindex, nofollow, noarchive" />
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='48' fill='%231d4f7e'/><text x='50' y='68' font-size='52' text-anchor='middle' fill='%23f7f5ef'>新</text></svg>" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="preconnect" href="https://images.unsplash.com" />
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@700;900&family=Space+Grotesk:wght@400;500;600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="./home.css?v=20260715-demo1" />
+    <link rel="stylesheet" href="./home.css?v=20260715-demo2" />
     <link rel="stylesheet" href="./article.css?v=20260715-demo2" />
     <link rel="stylesheet" href="./directory.css?v=20260716-demo2" />
+    <link rel="stylesheet" href="./plans.css?v=20260716-demo2" />
   </head>
   <body class="home subpage">
     <div class="page-progress" aria-hidden="true"><i></i></div>
@@ -61,57 +61,133 @@
     <main id="top">
       <nav class="breadcrumb" aria-label="パンくず">
         <a href="./index.html">トップ</a><span>/</span>
-        <b>会員企業一覧</b>
+        <a href="./about.html">商工会について</a><span>/</span>
+        <b>会館使用</b>
       </nav>
 
       <section class="dir-hero">
-        <p class="eyebrow">Business Directory</p>
-        <h1>町内のお店・事業者を探す</h1>
-        <p class="dir-lead">暮らしや仕事で必要な地元の情報を、業種やエリアからすぐに探せます。企業名や所在地、連絡先、ホームページ、SNSまでまとめて確認できます。</p>
-        <p class="dir-count"><strong>640</strong><span>新宮町商工会の<br />会員事業者</span></p>
+        <p class="eyebrow">Facility</p>
+        <h1>会館使用について</h1>
+        <p class="dir-lead">商工会館の会議室・研修室は、会員はもちろん会員外の方にもご利用いただけます。目的・時間帯に応じた利用料金をご案内します。</p>
       </section>
 
-      <section class="section businesses-section" aria-labelledby="business-list-title">
-        <div class="section-heading split-heading">
+      <section class="section businesses-section" aria-label="会議・研修等の利用料金">
+        <div class="section-heading">
           <div>
-            <p class="eyebrow">Search</p>
-            <h2 id="business-list-title">会員企業一覧</h2>
+            <p class="eyebrow">Rates</p>
+            <h2>会議・研修等の利用料金</h2>
           </div>
-          <p>業種・エリアから絞り込めます。</p>
         </div>
 
-        <div class="filters" aria-label="絞り込み条件">
-          <label>
-            業種
-            <select id="category-filter">
-              <option value="">すべて</option>
-            </select>
-          </label>
-          <label>
-            エリア
-            <select id="area-filter">
-              <option value="">すべて</option>
-            </select>
-          </label>
+        <div class="plan-table-wrap">
+          <table class="plan-table">
+            <thead>
+              <tr>
+                <th scope="col">室名</th>
+                <th scope="col">利用者</th>
+                <th scope="col">9:00〜12:00</th>
+                <th scope="col">12:00〜17:00</th>
+                <th scope="col">17:00〜22:00</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row" rowspan="2">大会議室Ⅰ・Ⅱ</th>
+                <td>会員</td>
+                <td>1,650円</td>
+                <td>2,750円</td>
+                <td>3,300円</td>
+              </tr>
+              <tr>
+                <td>会員外</td>
+                <td>2,475円</td>
+                <td>4,125円</td>
+                <td>−</td>
+              </tr>
+              <tr>
+                <th scope="row" rowspan="2">和室Ⅰ・Ⅱ</th>
+                <td>会員</td>
+                <td>1,650円</td>
+                <td>2,750円</td>
+                <td>3,300円</td>
+              </tr>
+              <tr>
+                <td>会員外</td>
+                <td>2,475円</td>
+                <td>4,125円</td>
+                <td>−</td>
+              </tr>
+              <tr>
+                <th scope="row" rowspan="2">小会議室</th>
+                <td>会員</td>
+                <td>1,650円</td>
+                <td>2,750円</td>
+                <td>−</td>
+              </tr>
+              <tr>
+                <td>会員外</td>
+                <td>2,475円</td>
+                <td>4,125円</td>
+                <td>−</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
-        <div class="filter-shortcuts" role="tablist" aria-label="業種で絞り込み">
-          <span>業種で絞る</span>
-          <button type="button" data-filter-category="" role="tab">すべて</button>
-          <button type="button" data-filter-category="飲食" role="tab">飲食</button>
-          <button type="button" data-filter-category="建設" role="tab">住まい・建設</button>
-          <button type="button" data-filter-category="美容" role="tab">美容</button>
-          <button type="button" data-filter-category="健康" role="tab">健康</button>
-          <button type="button" data-filter-category="サービス" role="tab">サービス</button>
+      </section>
+
+      <section class="section businesses-section" aria-label="展示会・物品販売等の利用料金">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Rates</p>
+            <h2>展示会・物品販売等の利用料金</h2>
+          </div>
+          <p>利用時間は9:00〜17:00です。</p>
         </div>
 
-        <div id="directory-ad-slot" class="directory-ad-slot" aria-label="おすすめの事業者"></div>
-
-        <div class="list-status">
-          <span id="result-count">0件</span>
-          <button id="reset-filters" type="button">条件をクリア</button>
+        <div class="plan-table-wrap">
+          <table class="plan-table">
+            <thead>
+              <tr>
+                <th scope="col">室名</th>
+                <th scope="col">会員</th>
+                <th scope="col">会員外</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">大会議室Ⅰ・Ⅱ</th>
+                <td>16,500円</td>
+                <td>27,500円</td>
+              </tr>
+              <tr>
+                <th scope="row">和室Ⅰ・Ⅱ</th>
+                <td>16,500円</td>
+                <td>22,000円</td>
+              </tr>
+              <tr>
+                <th scope="row">小会議室</th>
+                <td>7,700円</td>
+                <td>11,000円</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
-        <p class="plan-size-note">掲載カードの大きさ・表示順は掲載プラン（10万円・5万円・3万円・1万円）によって変わります。</p>
-        <div id="business-list" class="business-list directory-list"></div>
+
+        <p class="placeholder-note">※ 大会議室・和室を全室利用する場合は倍額料金となります。午前中からの延長使用は1時間につき550円（会員外は825円）加算されます。17:00以降および土日祝日の会館使用は会員のみとなります。冷暖房設備は有料（コイン式・運転時間制）で1時間200円です。</p>
+      </section>
+
+      <section class="section businesses-section" aria-label="使用申込手続き">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">How to Apply</p>
+            <h2>使用申込手続き</h2>
+          </div>
+        </div>
+        <p>会館使用申込書に必要事項をご記入のうえ、事務局までご提出ください。なお、会館使用は商工会事業等を優先するため、お申込み時点で使用を確約するものではありません。あらかじめご了承ください。</p>
+
+        <p class="placeholder-note">※ これはデモ画面です。会館使用申込書のPDFは準備中です。実際の掲載時には、ダウンロードできるようにします。</p>
+
+        <a class="button-primary" href="./contact.html?type=その他"><span>会館使用について相談する</span><i aria-hidden="true">→</i></a>
       </section>
     </main>
 
@@ -137,7 +213,7 @@
     </footer>
 
     <script>
-      // モバイルメニュー（app.js は一覧描画・絞り込み・いいねを担当）
+      // モバイルメニュー
       (function () {
         var t = document.getElementById("menu-toggle");
         var m = document.getElementById("mobile-menu");
@@ -160,7 +236,5 @@
         });
       })();
     </script>
-    <script src="./data.js?v=20260707-plan10-1"></script>
-    <script src="./app.js?v=20260707-plan10-1"></script>
   </body>
 </html>
